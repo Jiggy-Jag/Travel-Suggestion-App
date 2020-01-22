@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbg"
+    tools:context=".LoginScreen">
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="241dp"
+        android:layout_height="164dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="17dp"
+        android:src="@drawable/logo"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/LoginUsername"
+        android:layout_width="270dp"
+        android:layout_height="65dp"
+        android:layout_below="@+id/Logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="189dp"
+        android:autofillHints=""
+        android:drawableStart="@drawable/icon_id"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="@string/username"
+        android:inputType="textPersonName"
+        android:keepScreenOn="false"
+        android:shadowColor="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textIsSelectable="true"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/LoginPassword"
+        android:layout_width="270dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="210dp"
+        android:drawableStart="@drawable/icon_padlock"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="@string/password"
+
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:keepScreenOn="false"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="128dp"
+        android:layout_height="39dp"
+        android:layout_below="@+id/LoginUsername"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="114dp"
+        android:layout_marginBottom="144dp"
+        android:background="@color/cardview_light_background"
+        android:fontFamily="sans-serif"
+        android:text="@string/sign_in"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/newAccount"
+        android:layout_width="137dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="286dp"
+        android:layout_marginLeft="286dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="-12dp"
+        android:drawableStart="@drawable/icon_add"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/create_account"
+        android:textColor="#FBFBFB"
+        android:textSize="16sp" />
+
+</RelativeLayout>

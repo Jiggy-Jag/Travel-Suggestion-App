@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button letMeChoose;
     private Button helpMePick;
+    private Button Home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +33,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openActivityLoginScreen(View view) {
+        Intent intent = new Intent(this, LoginScreen.class);
+        startActivity(intent);
 
+    }
 }
