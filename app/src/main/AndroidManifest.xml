@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".helpMePick"/>
+        <activity android:name=".LoginScreen"></activity>
+        <activity android:name=".helpMePick" />
         <activity android:name=".LetMeChoose" />
         <activity android:name=".MainActivity">
             <intent-filter>
