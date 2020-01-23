@@ -38,4 +38,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void openBrowseActivity(View view) {
+        Intent intent = new Intent(this, browse_screen.class);
+        startActivity(intent);
+
+    }
+
 }
