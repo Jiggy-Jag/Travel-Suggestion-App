@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginScreen"></activity>
+        <activity android:name=".los_angeles_info"></activity>
+        <activity android:name=".browse_screen" />
+        <activity android:name=".LoginScreen" />
         <activity android:name=".helpMePick" />
         <activity android:name=".LetMeChoose" />
         <activity android:name=".MainActivity">

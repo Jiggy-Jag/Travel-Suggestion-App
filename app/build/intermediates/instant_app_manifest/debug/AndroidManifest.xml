@@ -19,6 +19,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="android.example.travelsuggestion.los_angeles_info" />
+        <activity android:name="android.example.travelsuggestion.browse_screen" />
         <activity android:name="android.example.travelsuggestion.LoginScreen" />
         <activity android:name="android.example.travelsuggestion.helpMePick" />
         <activity android:name="android.example.travelsuggestion.LetMeChoose" />
