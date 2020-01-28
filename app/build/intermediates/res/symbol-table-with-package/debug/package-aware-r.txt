@@ -807,6 +807,7 @@ id btn_los_angeles
 id btn_moscow
 id btn_santorini
 id btn_south_africa
+id button7
 id buttonPanel
 id center_vertical
 id chains
@@ -1019,6 +1020,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
+string button
 string create_account
 string password
 string search_menu_title
