@@ -1,8 +1,10 @@
 package android.example.travelsuggestion;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -18,10 +20,15 @@ import java.util.ArrayList;
 
 public class LetMeChoose extends AppCompatActivity {
 
+    public void LosAngelesInfo(View view){
+        Intent intent = new Intent(this,los_angeles_info.class);
+        startActivity(intent);
+    }
+
     BubblePicker bubblePicker;
     String[] name={
-            "New York", "Dubai", "Sydney", "Morocco", "New Orleans",
-            "France", "Maldives"
+            "Shopping", "Multicultural", "Sightseeing", "Wildlife", "Beaches",
+            "Historic Landmarks", "Diverse Food"
     };
 
     int[] images={
@@ -67,6 +74,7 @@ public class LetMeChoose extends AppCompatActivity {
             public void onBubbleDeselected(@NotNull PickerItem pickerItem) {
                 Toast.makeText(LetMeChoose.this,""+pickerItem.getTitle()+" Deselected",Toast.LENGTH_SHORT).show();
             }
+
         });
 
     }
