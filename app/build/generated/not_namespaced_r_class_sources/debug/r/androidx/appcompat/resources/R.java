@@ -124,10 +124,10 @@ public final class R {
         public static final int forever = 0x7f070063;
         public static final int icon = 0x7f070069;
         public static final int icon_group = 0x7f07006a;
-        public static final int info = 0x7f07006e;
-        public static final int italic = 0x7f070070;
-        public static final int line1 = 0x7f070072;
-        public static final int line3 = 0x7f070073;
+        public static final int info = 0x7f07006d;
+        public static final int italic = 0x7f07006f;
+        public static final int line1 = 0x7f070071;
+        public static final int line3 = 0x7f070072;
         public static final int normal = 0x7f07007d;
         public static final int notification_background = 0x7f07007e;
         public static final int notification_main_column = 0x7f07007f;
@@ -144,8 +144,8 @@ public final class R {
         public static final int tag_unhandled_key_listeners = 0x7f0700b5;
         public static final int text = 0x7f0700b6;
         public static final int text2 = 0x7f0700b7;
-        public static final int time = 0x7f0700bf;
-        public static final int title = 0x7f0700c0;
+        public static final int time = 0x7f0700be;
+        public static final int title = 0x7f0700bf;
     }
     public static final class integer {
         private integer() {}

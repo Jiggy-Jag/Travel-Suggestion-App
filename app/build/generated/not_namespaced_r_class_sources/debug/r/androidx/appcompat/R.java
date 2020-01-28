@@ -726,12 +726,12 @@ public final class R {
         public static final int icon = 0x7f070069;
         public static final int icon_group = 0x7f07006a;
         public static final int image = 0x7f07006c;
-        public static final int info = 0x7f07006e;
-        public static final int italic = 0x7f070070;
-        public static final int line1 = 0x7f070072;
-        public static final int line3 = 0x7f070073;
-        public static final int listMode = 0x7f070074;
-        public static final int list_item = 0x7f070075;
+        public static final int info = 0x7f07006d;
+        public static final int italic = 0x7f07006f;
+        public static final int line1 = 0x7f070071;
+        public static final int line3 = 0x7f070072;
+        public static final int listMode = 0x7f070073;
+        public static final int list_item = 0x7f070074;
         public static final int message = 0x7f070077;
         public static final int multiply = 0x7f070079;
         public static final int none = 0x7f07007c;
@@ -783,15 +783,15 @@ public final class R {
         public static final int text2 = 0x7f0700b7;
         public static final int textSpacerNoButtons = 0x7f0700b8;
         public static final int textSpacerNoTitle = 0x7f0700b9;
-        public static final int time = 0x7f0700bf;
-        public static final int title = 0x7f0700c0;
-        public static final int titleDividerNoCustom = 0x7f0700c1;
-        public static final int title_template = 0x7f0700c2;
-        public static final int topPanel = 0x7f0700c4;
-        public static final int unchecked = 0x7f0700c5;
-        public static final int uniform = 0x7f0700c6;
-        public static final int up = 0x7f0700c7;
-        public static final int wrap_content = 0x7f0700cb;
+        public static final int time = 0x7f0700be;
+        public static final int title = 0x7f0700bf;
+        public static final int titleDividerNoCustom = 0x7f0700c0;
+        public static final int title_template = 0x7f0700c1;
+        public static final int topPanel = 0x7f0700c3;
+        public static final int unchecked = 0x7f0700c4;
+        public static final int uniform = 0x7f0700c5;
+        public static final int up = 0x7f0700c6;
+        public static final int wrap_content = 0x7f0700ca;
     }
     public static final class integer {
         private integer() {}
