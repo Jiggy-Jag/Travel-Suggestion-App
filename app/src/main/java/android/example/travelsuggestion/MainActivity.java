@@ -17,19 +17,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        letMeChoose = (Button) findViewById(R.id.btnLetMeChoose);
         helpMePick = (Button) findViewById(R.id.btnHelpMePick);
+        letMeChoose = (Button) findViewById(R.id.btnLetMeChoose);
 
     }
 
     public void openActivityLetMeChoose(View view){
-        Intent intent = new Intent(this,LetMeChoose.class);
+        Intent intent = new Intent(this,helpMePick.class);
         startActivity(intent);
 
     }
 
     public void openActivityHelpMeChoose(View view){
-        Intent intent = new Intent(this, helpMePick.class);
+        Intent intent = new Intent(this, LetMeChoose.class);
         startActivity(intent);
     }
 
