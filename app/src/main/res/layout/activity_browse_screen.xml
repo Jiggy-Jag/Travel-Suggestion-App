@@ -30,7 +30,8 @@
             android:text="VANCOUVER"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="Vancouverinfo"/>
 
         <Button
             android:id="@+id/btn_south_africa"
