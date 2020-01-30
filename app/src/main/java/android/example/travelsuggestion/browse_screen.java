@@ -17,4 +17,9 @@ public class browse_screen extends AppCompatActivity {
         Intent intent = new Intent(this,los_angeles_info.class);
         startActivity(intent);
     }
+    public void Vancouverinfo(View view) {
+        Intent intent = new Intent(this, vancouverinfo.class);
+        startActivity(intent);
+    }
+
 }
