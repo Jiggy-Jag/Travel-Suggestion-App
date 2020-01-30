@@ -1,10 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.igalata:Bubble-Picker:v0.1.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b9b680e2c57c1f38b80e666144169896/jetified-Bubble-Picker-v0.1.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b9b680e2c57c1f38b80e666144169896/jetified-Bubble-Picker-v0.1.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b9b680e2c57c1f38b80e666144169896/jetified-Bubble-Picker-v0.1.1/jars/libs/jbox2d-library-2.1.2.2.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b9b680e2c57c1f38b80e666144169896/jetified-Bubble-Picker-v0.1.1/jars/libs/slf4j-api-1.7.22.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d16a98830fea13dda76592468b3ac510/jetified-Bubble-Picker-v0.1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d16a98830fea13dda76592468b3ac510/jetified-Bubble-Picker-v0.1.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d16a98830fea13dda76592468b3ac510/jetified-Bubble-Picker-v0.1.1/jars/libs/slf4j-api-1.7.22.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d16a98830fea13dda76592468b3ac510/jetified-Bubble-Picker-v0.1.1/jars/libs/jbox2d-library-2.1.2.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
