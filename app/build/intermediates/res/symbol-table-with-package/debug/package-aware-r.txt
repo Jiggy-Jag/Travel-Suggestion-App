@@ -1049,6 +1049,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_browse_screen
+layout activity_destination__info
 layout activity_help_me_pick
 layout activity_let_me_choose
 layout activity_login_screen
