@@ -11,13 +11,13 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/background_image"
             android:layout_width="match_parent"
             android:layout_height="230dp"
             android:background="@drawable/losangeles_pressed" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/title2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -32,7 +32,7 @@
             android:layout_marginTop="10dp">
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/key_word_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -100,7 +100,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/title1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -110,7 +110,7 @@
             android:layout_marginTop="10dp"/>
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/txt_summary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
