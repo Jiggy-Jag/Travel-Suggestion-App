@@ -17,12 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@drawable/custom_los_angeles"
-            android:onClick="LosAngelesInfo"
             android:text="LOS ANGELES"
             android:textAllCaps="true"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="Open_los_angeles_info"/>
 
         <Button
             android:id="@+id/btn_canada"

@@ -35,7 +35,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="android.example.travelsuggestion.destination_Info" />
+        <activity android:name="android.example.travelsuggestion.info_template" />
         <activity android:name="android.example.travelsuggestion.vancouverinfo" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

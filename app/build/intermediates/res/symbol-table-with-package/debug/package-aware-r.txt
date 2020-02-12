@@ -860,6 +860,7 @@ id alertTitle
 id always
 id async
 id auto
+id background_image
 id barrier
 id beginning
 id blocking
@@ -872,6 +873,7 @@ id btn_los_angeles
 id btn_moscow
 id btn_santorini
 id btn_south_africa
+id button
 id button4
 id button7
 id buttonPanel
@@ -911,6 +913,11 @@ id image
 id info
 id invisible
 id italic
+id key_word_1
+id key_word_2
+id key_word_3
+id key_word_4
+id key_word_5
 id left
 id light
 id line1
@@ -940,7 +947,6 @@ id picker
 id progress_circular
 id progress_horizontal
 id radio
-id radioButton4
 id right
 id right_icon
 id right_side
@@ -989,16 +995,17 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
-id textView10
-id textView5
-id textView8
-id textView9
 id time
 id title
+id title1
+id title2
+id title3
 id titleDividerNoCustom
 id title_template
 id top
 id topPanel
+id txt_summary
+id txt_weather_info
 id unchecked
 id uniform
 id up
@@ -1051,6 +1058,7 @@ layout abc_tooltip
 layout activity_browse_screen
 layout activity_destination__info
 layout activity_help_me_pick
+layout activity_info_template
 layout activity_let_me_choose
 layout activity_login_screen
 layout activity_los_angeles_info
