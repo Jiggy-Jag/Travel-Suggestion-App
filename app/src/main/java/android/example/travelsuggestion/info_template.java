@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -21,7 +23,7 @@ public class info_template extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_template);
-       //init layout objects
+        //init layout objects
         text_summary = (TextView) findViewById(R.id.txt_summary);
         image = (TextView) findViewById(R.id.background_image) ;
         key_word1 = (RadioButton) findViewById(R.id.key_word_1);
@@ -39,6 +41,26 @@ public class info_template extends AppCompatActivity {
         }
 
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.share:
+                Intent i = new Intent(android.content.Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(android.content.Intent.EXTRA_TEXT, "The string you want to share, which can include URLs");
+                startActivity(Intent.createChooser(i,"share"));
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
     public void update_los_angeles(){
         text_summary.setText("los angeles");
