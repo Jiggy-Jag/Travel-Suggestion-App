@@ -2,6 +2,7 @@ package android.example.travelsuggestion;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -20,13 +21,8 @@ import java.util.ArrayList;
 
 public class LetMeChoose extends AppCompatActivity {
 
-    public void LosAngelesInfo(View view){
-        Intent intent = new Intent(this,los_angeles_info.class);
-        startActivity(intent);
-    }
-
     BubblePicker bubblePicker;
-    String[] name={
+    static String[] name={
             "Shopping", "Multicultural", "Sightseeing", "Wildlife", "Beaches",
             "Historic Landmarks", "Diverse Food"
     };
@@ -66,14 +62,24 @@ public class LetMeChoose extends AppCompatActivity {
         bubblePicker.setItems(listItems);
         bubblePicker.setListener(new BubblePickerListener() {
             @Override
-            public void onBubbleSelected(@NotNull PickerItem pickerItem) {
-                Toast.makeText(LetMeChoose.this,""+pickerItem.getTitle()+" Selected",Toast.LENGTH_SHORT).show();
+            public void onBubbleDeselected(@NotNull PickerItem pickerItem) {
+
             }
 
             @Override
-            public void onBubbleDeselected(@NotNull PickerItem pickerItem) {
-                Toast.makeText(LetMeChoose.this,""+pickerItem.getTitle()+" Deselected",Toast.LENGTH_SHORT).show();
+            public void onBubbleSelected(@NotNull PickerItem pickerItem) {
+                // Intent i = new Intent(getApplicationContext(), info_template.class);
+                //  startActivity(i);
+                for(int i=0;i<7; i++) {
+                    if(pickerItem.getTitle()==name[i]){
+                        Intent intent = new Intent(getApplicationContext(), info_template.class);
+                        startActivity(intent);
+                    }
+                }
+
+
             }
+
 
         });
 
