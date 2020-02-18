@@ -42,26 +42,26 @@ public class info_template extends AppCompatActivity {
 
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case R.id.share:
-                Intent i = new Intent(android.content.Intent.ACTION_SEND);
-                i.setType("text/plain");
-                i.putExtra(android.content.Intent.EXTRA_TEXT, "The string you want to share, which can include URLs");
-                startActivity(Intent.createChooser(i,"share"));
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu,menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    @Override
+//
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//
+//        switch (item.getItemId()) {
+//            case R.id.share:
+//                Intent i = new Intent(android.content.Intent.ACTION_SEND);
+//                i.setType("text/plain");
+//                i.putExtra(android.content.Intent.EXTRA_TEXT, "The string you want to share, which can include URLs");
+//                startActivity(Intent.createChooser(i,"share"));
+//                break;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
     public void update_los_angeles(){
         text_summary.setText("los angeles");
         image.setText("LOS ANGELES");
