@@ -39,8 +39,8 @@
         <activity android:name=".los_angeles_info" />
         <activity android:name=".browse_screen" />
         <activity android:name=".LoginScreen" />
-        <activity android:name=".LetMeChoose" />
         <activity android:name=".helpMePick" />
+        <activity android:name=".LetMeChoose" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
