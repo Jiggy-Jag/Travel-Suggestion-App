@@ -1,87 +1,55 @@
 package android.example.travelsuggestion;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
-import com.igalata.bubblepicker.BubblePickerListener;
-import com.igalata.bubblepicker.model.PickerItem;
-import com.igalata.bubblepicker.rendering.BubblePicker;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.jetbrains.annotations.NotNull;
+public class LetMeChoose extends FragmentActivity implements OnMapReadyCallback {
 
-import java.util.ArrayList;
 
-public class LetMeChoose extends AppCompatActivity {
+    public void LosAngelesInfo(View view){
+        Intent intent = new Intent(this,los_angeles_info.class);
+        startActivity(intent);
+    }
 
-    BubblePicker bubblePicker;
-    static String[] name={
-            "Shopping", "Multicultural", "Sightseeing", "Wildlife", "Beaches",
-            "Historic Landmarks", "Diverse Food"
-    };
 
-    int[] images={
-            R.drawable.newyork,
-            R.drawable.dubai,
-            R.drawable.sydney,
-            R.drawable.morocco,
-            R.drawable.neworleans,
-            R.drawable.france,
-            R.drawable.maldives
-    };
-
-    int[] colors={
-            Color.parseColor("#1A237E"),
-            Color.parseColor("#6200EA"),
-            Color.parseColor("#004D40"),
-            Color.parseColor("#880E4F"),
-            Color.parseColor("#B71C1C"),
-            Color.parseColor("#5200EA"),
-            Color.parseColor("#C04D40"),
-    };
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    GoogleMap map;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_let_me_choose);
-
-        bubblePicker= (BubblePicker) findViewById(R.id.picker);
-        ArrayList<PickerItem> listItems=new ArrayList<>();
-        for(int i=0;i<name.length;i++){
-            PickerItem item=new PickerItem(name[i],colors[i], Color.WHITE, getDrawable(images[i]));
-            listItems.add(item);
-        }
-
-        bubblePicker.setItems(listItems);
-        bubblePicker.setListener(new BubblePickerListener() {
-            @Override
-            public void onBubbleDeselected(@NotNull PickerItem pickerItem) {
-
-            }
-
-            @Override
-            public void onBubbleSelected(@NotNull PickerItem pickerItem) {
-                // Intent i = new Intent(getApplicationContext(), info_template.class);
-                //  startActivity(i);
-                for(int i=0;i<7; i++) {
-                    if(pickerItem.getTitle()==name[i]){
-                        Intent intent = new Intent(getApplicationContext(), info_template.class);
-                        startActivity(intent);
-                    }
-                }
+        SupportMapFragment mapFragment = (SupportMapFragment)getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
 
-            }
 
 
-        });
+
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+        map = googleMap;
+        // Add a marker in LA and move the camera
+        LatLng LosAngeles = new LatLng(34.053164, -118.252480);
+        map.addMarker(new MarkerOptions().position(LosAngeles).title("Marker in Los Angeles"));
+        map.moveCamera(CameraUpdateFactory.newLatLng(LosAngeles));
+
+        LatLng London = new LatLng(51.508531, -0.129322);
+        map.addMarker(new MarkerOptions().position(London).title("Marker in London"));
+        map.moveCamera(CameraUpdateFactory.newLatLng(London));
+
 
     }
 }

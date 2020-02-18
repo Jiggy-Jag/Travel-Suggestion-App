@@ -55,8 +55,8 @@
         <activity android:name="android.example.travelsuggestion.los_angeles_info" />
         <activity android:name="android.example.travelsuggestion.browse_screen" />
         <activity android:name="android.example.travelsuggestion.LoginScreen" />
-        <activity android:name="android.example.travelsuggestion.helpMePick" />
         <activity android:name="android.example.travelsuggestion.LetMeChoose" />
+        <activity android:name="android.example.travelsuggestion.helpMePick" />
         <activity android:name="android.example.travelsuggestion.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
