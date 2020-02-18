@@ -48,7 +48,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:onClick="openActivityLetMeChoose"
-                android:text="Let me choose"
+                android:text="Choose"
                 android:textSize="14dp" />
 
             <Button
@@ -57,7 +57,7 @@
                 android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:onClick="openActivityHelpMeChoose"
-                android:text="Help me pick"
+                android:text="SUGGEST"
                 android:textSize="14dp" />
 
             <Button
