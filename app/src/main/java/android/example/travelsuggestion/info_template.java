@@ -42,8 +42,8 @@ public class info_template extends AppCompatActivity {
 
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    //@Override
+   /* public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
@@ -61,7 +61,7 @@ public class info_template extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
     public void update_los_angeles(){
         text_summary.setText("los angeles");
         image.setText("LOS ANGELES");
