@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivityLetMeChoose(View view){
-        Intent intent = new Intent(this, LetMeChoose.class);
+        Intent intent = new Intent(this,helpMePick.class);
         startActivity(intent);
 
     }
 
     public void openActivityHelpMeChoose(View view){
-        Intent intent = new Intent(this, android.example.travelsuggestion.helpMePick.class);
+        Intent intent = new Intent(this, LetMeChoose.class);
         startActivity(intent);
     }
 
