@@ -3,10 +3,10 @@
 
     <item
         android:state_pressed="true"
-        android:drawable="@drawable/losangeles_pressed"
+        android:drawable="@drawable/los_angeles_pressed"
         />
 
     <item
-        android:drawable="@drawable/losangeles"
+        android:drawable="@drawable/los_angeles"
         />
 </selector>

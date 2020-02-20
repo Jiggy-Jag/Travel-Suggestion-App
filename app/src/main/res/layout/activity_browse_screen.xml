@@ -13,7 +13,95 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/btn_los_angeles"
+            android:id="@+id/custom_bora_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_bora"
+            android:text="BORA"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_cape_town_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_cape_town"
+            android:text="CAPE TOWN"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_dubai_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_dubai"
+            android:text="DUBAI"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_dubrovnik_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_dubrovnik"
+            android:text="DUBROVNIK"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_edinburgh_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_edinburgh"
+            android:text="EDINBURGH"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_hong_kong_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_hong_kong"
+            android:text="HONG KONG"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_jaipur_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_jaipur"
+            android:text="JAIPUR"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_london_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_london"
+            android:text="LONDON"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_los_angeles_btn"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@drawable/custom_los_angeles"
@@ -23,45 +111,99 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:onClick="Open_los_angeles_info"/>
+            />
 
         <Button
-            android:id="@+id/btn_canada"
+            android:id="@+id/custom_paro_valley_btn"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/custom_canada"
-            android:text="VANCOUVER"
+            android:background="@drawable/custom_paro_valley"
+            android:text="PARO VALLEY"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:onClick="Vancouverinfo"/>
+            />
 
         <Button
-            android:id="@+id/btn_south_africa"
+            android:id="@+id/custom_petra_btn"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/custom_south_africa"
-            android:text="SOUTH AFRICA"
+            android:background="@drawable/custom_petra"
+            android:text="PETRA"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
+
         <Button
-            android:id="@+id/btn_santorini"
+            android:id="@+id/custom_rio_de_janeiro_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_rio_de_janeiro"
+            android:text="RIO DE JANEIRO"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_rome_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_rome"
+            android:text="ROME"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_santorini_btn"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@drawable/custom_santorini"
             android:text="SANTORINI"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
+
         <Button
-            android:id="@+id/btn_moscow"
+            android:id="@+id/custom_singapore_btn"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/custom_moscow"
-            android:text="MOSCOW"
+            android:background="@drawable/custom_singapore"
+            android:text="SINGAPORE"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_vancouver_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_vancouver"
+            android:text="VANCOUVER"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:onClick="Vancouverinfo"/>
+
+
+        <Button
+            android:id="@+id/custom_waikato_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_waikato"
+            android:text="WAIKATO"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+
+
 
     </LinearLayout>
 
