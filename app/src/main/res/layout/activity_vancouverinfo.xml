@@ -15,7 +15,7 @@
             android:id="@+id/background_image"
             android:layout_width="match_parent"
             android:layout_height="230dp"
-            android:background="@drawable/custom_vancouver" />
+            android:background="@drawable/custom_canada" />
 
         <TextView
             android:id="@+id/title2"
