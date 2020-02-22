@@ -13,11 +13,66 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/custom_amsterdam_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_amsterdam"
+            android:text="AMSTERDAM"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_antarctica_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_antarctica"
+            android:text="ANTARCTICA"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_bali_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_bali"
+            android:text="BALI"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_barbados_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_barbados"
+            android:text="BARBADOS"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
             android:id="@+id/custom_bora_btn"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@drawable/custom_bora"
             android:text="BORA"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_cairo_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_cairo"
+            android:text="CAIRO"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -34,6 +89,16 @@
             android:textStyle="bold"
             />
 
+        <Button
+            android:id="@+id/custom_copenhagen_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_copenhagen"
+            android:text="COPENHAGEN"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
         <Button
             android:id="@+id/custom_dubai_btn"
             android:layout_width="match_parent"
@@ -68,6 +133,17 @@
             />
 
         <Button
+            android:id="@+id/custom_havana_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_havana"
+            android:text="HAVANA"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
             android:id="@+id/custom_hong_kong_btn"
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -84,6 +160,17 @@
             android:layout_height="200dp"
             android:background="@drawable/custom_jaipur"
             android:text="JAIPUR"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_kerry_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_kerry"
+            android:text="KERRY"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -111,6 +198,63 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:onClick="Open_los_angeles_info"/>
+
+
+        <Button
+            android:id="@+id/custom_maldives_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_maldives"
+            android:text="MALDIVES"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_marrakech_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_marrakech"
+            android:text="MARRAKECH"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+
+
+        <Button
+            android:id="@+id/custom_moscow_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_moscow"
+            android:text="MOSCOW"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_new_york_city_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_new_york_city"
+            android:text="NEW YORK CITY"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_paris_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_paris"
+            android:text="PARIS"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
             />
 
         <Button
@@ -158,6 +302,17 @@
             />
 
         <Button
+            android:id="@+id/custom_santiago_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_santiago"
+            android:text="SANTIAGO"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
             android:id="@+id/custom_santorini_btn"
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -174,6 +329,28 @@
             android:layout_height="200dp"
             android:background="@drawable/custom_singapore"
             android:text="SINGAPORE"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_south_africa_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_south_africa"
+            android:text="SOUTH AFRICA"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/custom_tokyo_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_tokyo"
+            android:text="TOKYO"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
             android:textStyle="bold"

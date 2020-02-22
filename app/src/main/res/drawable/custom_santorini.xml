@@ -6,7 +6,6 @@
         android:state_pressed="true"
         android:drawable="@drawable/santorini_pressed"
         />
-    //defult image
     <item
         android:drawable="@drawable/santorini"
         />
