@@ -23,8 +23,8 @@ public class selection extends AppCompatActivity {
     ArrayList<String> keywords =new ArrayList<String>();
     BubblePicker bubblePicker;
     static String[] name={
-            "Shopping", "Multicultural", "Sightseeing", "Wildlife", "Beaches",
-            "Historic Landmarks", "Diverse Food"
+            "Shopping", "Culture", "Sightseeing", "Wildlife", "Beaches",
+            "Scenic Views", "Island","Romantic","Adventurous"
     };
 
     int[] images={
@@ -34,7 +34,10 @@ public class selection extends AppCompatActivity {
             R.drawable.morocco,
             R.drawable.neworleans,
             R.drawable.france,
-            R.drawable.maldives
+            R.drawable.maldives,
+            R.drawable.neworleans,
+            R.drawable.sydney,
+            R.drawable.newyork,
     };
 
     int[] colors={
@@ -45,6 +48,10 @@ public class selection extends AppCompatActivity {
             Color.parseColor("#B71C1C"),
             Color.parseColor("#5200EA"),
             Color.parseColor("#C04D40"),
+            Color.parseColor("#880E4F"),
+            Color.parseColor("#1A237E"),
+            Color.parseColor("#C04D40"),
+
     };
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -66,7 +73,7 @@ public class selection extends AppCompatActivity {
 
 
                 keywords.remove(pickerItem.getTitle());
-                Toast.makeText(getApplicationContext(),keywords + " Deselect Keywords",Toast.LENGTH_SHORT).show();
+
 
             }
 
@@ -74,7 +81,7 @@ public class selection extends AppCompatActivity {
             public void onBubbleSelected(@NotNull PickerItem pickerItem) {
 
                 keywords.add(pickerItem.getTitle());
-                Toast.makeText(getApplicationContext(),keywords + " Selected Keywords",Toast.LENGTH_SHORT).show();
+
 
 //                for(int i=0;i<7; i++) {
 //                    if(pickerItem.getTitle()==name[i]){
