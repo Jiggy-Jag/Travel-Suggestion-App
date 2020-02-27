@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,10 +20,11 @@ import java.util.ArrayList;
 
 public class selection extends AppCompatActivity {
 
+    ArrayList<String> keywords =new ArrayList<String>();
     BubblePicker bubblePicker;
     static String[] name={
-            "Shopping", "Multicultural", "Sightseeing", "Wildlife", "Beaches",
-            "Historic Landmarks", "Diverse Food"
+            "Shopping", "Culture", "Sightseeing", "Wildlife", "Beaches",
+            "Scenic Views", "Island","Romantic","Adventurous"
     };
 
     int[] images={
@@ -31,7 +34,10 @@ public class selection extends AppCompatActivity {
             R.drawable.morocco,
             R.drawable.neworleans,
             R.drawable.france,
-            R.drawable.maldives
+            R.drawable.maldives,
+            R.drawable.neworleans,
+            R.drawable.sydney,
+            R.drawable.newyork,
     };
 
     int[] colors={
@@ -42,6 +48,10 @@ public class selection extends AppCompatActivity {
             Color.parseColor("#B71C1C"),
             Color.parseColor("#5200EA"),
             Color.parseColor("#C04D40"),
+            Color.parseColor("#880E4F"),
+            Color.parseColor("#1A237E"),
+            Color.parseColor("#C04D40"),
+
     };
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -61,18 +71,24 @@ public class selection extends AppCompatActivity {
             @Override
             public void onBubbleDeselected(@NotNull PickerItem pickerItem) {
 
+
+                keywords.remove(pickerItem.getTitle());
+
+
             }
 
             @Override
             public void onBubbleSelected(@NotNull PickerItem pickerItem) {
-                // Intent i = new Intent(getApplicationContext(), info_template.class);
-                //  startActivity(i);
-                for(int i=0;i<7; i++) {
-                    if(pickerItem.getTitle()==name[i]){
-                        Intent intent = new Intent(getApplicationContext(), info_template.class);
-                        startActivity(intent);
-                    }
-                }
+
+                keywords.add(pickerItem.getTitle());
+
+
+//                for(int i=0;i<7; i++) {
+//                    if(pickerItem.getTitle()==name[i]){
+//                        Intent intent = new Intent(getApplicationContext(), info_template.class);
+//                        startActivity(intent);
+//                    }
+//                }
 
 
             }
@@ -80,5 +96,20 @@ public class selection extends AppCompatActivity {
 
         });
 
+    }
+
+
+    public void onClick(View view){
+        if(keywords.size() > 2){
+            Toast.makeText(getApplicationContext(),"Select only 2",Toast.LENGTH_SHORT).show();
+        }
+        else if (keywords.size() == 0){
+            Toast.makeText(getApplicationContext(),"Select at least 1",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Intent intent = new Intent(getApplicationContext(), info_template.class);
+            startActivity(intent);
+
+        }
     }
 }
