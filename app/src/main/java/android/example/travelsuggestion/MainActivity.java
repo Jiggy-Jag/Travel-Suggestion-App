@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RatingBar;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button helpMePick;
     private Button Home;
     private Button http;
-    private Button RateUs;
+    private Button btn_RateUs;
 
 
     @Override
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         helpMePick = (Button) findViewById(R.id.btnHelpMePick);
         letMeChoose = (Button) findViewById(R.id.btnLetMeChoose);
         http = (Button) findViewById(R.id.http);
-        RateUs = (Button) findViewById(R.id.btn_RateUs);
+        btn_RateUs = (Button) findViewById(R.id.btn_RateUs);
 
     }
 
