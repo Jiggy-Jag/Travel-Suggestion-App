@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 
 public class selection extends AppCompatActivity {
 
+    ArrayList<String> keywords =new ArrayList<String>();
     BubblePicker bubblePicker;
     static String[] name={
             "Shopping", "Multicultural", "Sightseeing", "Wildlife", "Beaches",
@@ -61,18 +64,24 @@ public class selection extends AppCompatActivity {
             @Override
             public void onBubbleDeselected(@NotNull PickerItem pickerItem) {
 
+
+                keywords.remove(pickerItem.getTitle());
+                Toast.makeText(getApplicationContext(),keywords + " Deselect Keywords",Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onBubbleSelected(@NotNull PickerItem pickerItem) {
-                // Intent i = new Intent(getApplicationContext(), info_template.class);
-                //  startActivity(i);
-                for(int i=0;i<7; i++) {
-                    if(pickerItem.getTitle()==name[i]){
-                        Intent intent = new Intent(getApplicationContext(), info_template.class);
-                        startActivity(intent);
-                    }
-                }
+
+                keywords.add(pickerItem.getTitle());
+                Toast.makeText(getApplicationContext(),keywords + " Selected Keywords",Toast.LENGTH_SHORT).show();
+
+//                for(int i=0;i<7; i++) {
+//                    if(pickerItem.getTitle()==name[i]){
+//                        Intent intent = new Intent(getApplicationContext(), info_template.class);
+//                        startActivity(intent);
+//                    }
+//                }
 
 
             }
@@ -80,5 +89,20 @@ public class selection extends AppCompatActivity {
 
         });
 
+    }
+
+
+    public void onClick(View view){
+        if(keywords.size() > 2){
+            Toast.makeText(getApplicationContext(),"Select only 2",Toast.LENGTH_SHORT).show();
+        }
+        else if (keywords.size() == 0){
+            Toast.makeText(getApplicationContext(),"Select at least 1",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Intent intent = new Intent(getApplicationContext(), info_template.class);
+            startActivity(intent);
+
+        }
     }
 }
