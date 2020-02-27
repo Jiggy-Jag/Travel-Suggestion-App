@@ -36,15 +36,20 @@ app.get('/destinations/:id', (req, res) => {
 
     let sql = `SELECT * FROM destinations WHERE dest_id = ${req.params.id}`;
     db.query(sql, (err, result) => {
-        if (err) console.log('EEROR');
+        if (err) console.log('EERROR');
         res.send(result);
 
     });
 
 });
 
+app.get('Search/:keyword1/:keyword2')
+let sql = 'SELECT * FROM destinations WHERE '
 
-app.listen('3000', () => {
 
-console.log('Server started on port 3000');
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+
+console.log(`Server started on port ${port}`);
 });
