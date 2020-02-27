@@ -27,7 +27,7 @@ public class http_test extends AppCompatActivity {
         mResult = findViewById(R.id.tv);
 
         //make GET request
-        new GetDataTask().execute("http://172.31.82.136:3000/destinations/:id/1");
+        new GetDataTask().execute("http://172.31.82.136:3000/destinations");
 
         // make POST request
         //new PostDataTask().execute("http://172.31.82.136:3000/");
