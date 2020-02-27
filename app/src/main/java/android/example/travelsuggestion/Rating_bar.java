@@ -54,7 +54,7 @@ public class Rating_bar extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener(){
             public void onClick (View view){
                 temp = rateCount.getText().toString();
-                showRating.setText("Your Rating: " + "\n" + temp + "\n" + review.getText());
+                showRating.setText("Your Rating: \n" + temp + "\n" + review.getText());
                 review.setText("");
                 ratingBar.setRating(0);
                 rateCount.setText("");

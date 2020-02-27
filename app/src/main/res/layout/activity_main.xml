@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/loginbg">
+    android:background="@drawable/loginbg"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,16 +30,16 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
             android:src="@drawable/logo"
             android:visibility="visible"
-            tools:visibility="visible"
-            android:layout_gravity="center"/>
+            tools:visibility="visible" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="294dp"
-            android:orientation="vertical"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btnLetMeChoose"
@@ -68,6 +68,7 @@
                 android:onClick="openBrowseActivity"
                 android:text="BROWSE"
                 android:textSize="14dp" />
+
         </LinearLayout>
 
         <Button
