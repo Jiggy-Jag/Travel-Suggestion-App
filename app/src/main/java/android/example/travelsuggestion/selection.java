@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 public class selection extends AppCompatActivity {
-
+String test = "1";
     ArrayList<String> keywords =new ArrayList<String>();
     BubblePicker bubblePicker;
     static String[] name={
@@ -79,9 +79,9 @@ public class selection extends AppCompatActivity {
 
             @Override
             public void onBubbleSelected(@NotNull PickerItem pickerItem) {
-
+                String x = pickerItem.getTitle();
                 keywords.add(pickerItem.getTitle());
-
+                Toast.makeText(getApplicationContext(),x,Toast.LENGTH_SHORT).show();
 
 //                for(int i=0;i<7; i++) {
 //                    if(pickerItem.getTitle()==name[i]){
@@ -99,15 +99,18 @@ public class selection extends AppCompatActivity {
     }
 
 
-    public void onClick(View view){
+
+    public void onClick( View view){
+
         if(keywords.size() > 2){
             Toast.makeText(getApplicationContext(),"Select only 2",Toast.LENGTH_SHORT).show();
+
         }
         else if (keywords.size() == 0){
             Toast.makeText(getApplicationContext(),"Select at least 1",Toast.LENGTH_SHORT).show();
         }
         else{
-            Intent intent = new Intent(getApplicationContext(), info_template.class);
+            Intent intent = new Intent(getApplicationContext(), afterselection.class);
             startActivity(intent);
 
         }
