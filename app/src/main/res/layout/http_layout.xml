@@ -9,10 +9,26 @@
 
     <TextView
         android:id="@+id/tv"
+        android:layout_width="199dp"
+        android:layout_height="503dp"
+        android:text="Test HTTP request !"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="91dp"
+        android:layout_height="65dp"
+        android:layout_weight="1"
+        android:onClick="Test"
+        android:text="GET" />
+
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:text="Test HTTP request !" />
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
 </LinearLayout>

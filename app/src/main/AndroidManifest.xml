@@ -40,6 +40,7 @@
         <activity android:name=".map" />
         <activity android:name=".selection" />
         <activity android:name=".http_test"/>
+        <activity android:name=".afterselection"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
