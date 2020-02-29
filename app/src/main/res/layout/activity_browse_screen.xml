@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/browse_screen"
     android:layout_width="match_parent"
-    android:scrollbarThumbVertical="@drawable/scroll_thumb"
-    android:scrollbarSize="10dp"
-    android:scrollbarTrackVertical="@drawable/scroll_track"
     android:layout_height="match_parent"
+    android:scrollbarSize="10dp"
+    android:scrollbarThumbVertical="@drawable/scroll_thumb"
+    android:scrollbarTrackVertical="@drawable/scroll_track"
     tools:context=".browse">0-0980-98
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,8 +22,7 @@
             android:text="AMSTERDAM"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_antarctica_btn"
@@ -34,8 +32,7 @@
             android:text="ANTARCTICA"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_bali_btn"
@@ -45,8 +42,7 @@
             android:text="BALI"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_barbados_btn"
@@ -56,8 +52,7 @@
             android:text="BARBADOS"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_bora_btn"
@@ -67,8 +62,7 @@
             android:text="BORA"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_cairo_btn"
@@ -78,8 +72,7 @@
             android:text="CAIRO"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_cape_town_btn"
@@ -89,8 +82,7 @@
             android:text="CAPE TOWN"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_copenhagen_btn"
@@ -100,8 +92,8 @@
             android:text="COPENHAGEN"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/custom_dubai_btn"
             android:layout_width="match_parent"
@@ -110,8 +102,7 @@
             android:text="DUBAI"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_dubrovnik_btn"
@@ -121,8 +112,7 @@
             android:text="DUBROVNIK"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_edinburgh_btn"
@@ -132,8 +122,7 @@
             android:text="EDINBURGH"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_havana_btn"
@@ -143,8 +132,7 @@
             android:text="HAVANA"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_hong_kong_btn"
@@ -154,8 +142,7 @@
             android:text="HONG KONG"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_jaipur_btn"
@@ -165,8 +152,7 @@
             android:text="JAIPUR"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_kerry_btn"
@@ -176,8 +162,7 @@
             android:text="KERRY"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_london_btn"
@@ -187,20 +172,19 @@
             android:text="LONDON"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_los_angeles_btn"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@drawable/custom_los_angeles"
+            android:onClick="Open_los_angeles_info"
             android:text="LOS ANGELES"
             android:textAllCaps="true"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:onClick="Open_los_angeles_info"/>
+            android:textStyle="bold" />
 
 
         <Button
@@ -211,8 +195,7 @@
             android:text="MALDIVES"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_marrakech_btn"
@@ -222,20 +205,7 @@
             android:text="MARRAKECH"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
-
-        <Button
-            android:id="@+id/custom_mbombela_btn"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@drawable/custom_mbombela"
-            android:text="MBOMBELA"
-            android:textColor="@android:color/background_light"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            />
-
+            android:textStyle="bold" />
 
 
         <Button
@@ -246,8 +216,7 @@
             android:text="MOSCOW"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_new_orleans_btn"
@@ -257,8 +226,7 @@
             android:text="NEW ORLEANS"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
 
         <Button
@@ -269,8 +237,7 @@
             android:text="NEW YORK CITY"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_paris_btn"
@@ -280,8 +247,7 @@
             android:text="PARIS"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_paro_valley_btn"
@@ -291,8 +257,7 @@
             android:text="PARO VALLEY"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_petra_btn"
@@ -302,8 +267,7 @@
             android:text="PETRA"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_rio_de_janeiro_btn"
@@ -313,8 +277,7 @@
             android:text="RIO DE JANEIRO"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_rome_btn"
@@ -324,8 +287,7 @@
             android:text="ROME"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_santiago_btn"
@@ -335,8 +297,7 @@
             android:text="SANTIAGO"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_santorini_btn"
@@ -346,8 +307,7 @@
             android:text="SANTORINI"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_singapore_btn"
@@ -357,8 +317,7 @@
             android:text="SINGAPORE"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_south_africa_btn"
@@ -368,8 +327,17 @@
             android:text="SOUTH AFRICA"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/custom_sydney_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_sydney"
+            android:text="SYDNEY"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_tokyo_btn"
@@ -379,19 +347,18 @@
             android:text="TOKYO"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/custom_vancouver_btn"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@drawable/custom_vancouver"
+            android:onClick="Vancouverinfo"
             android:text="VANCOUVER"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:onClick="Vancouverinfo"/>
+            android:textStyle="bold" />
 
 
         <Button
@@ -402,10 +369,7 @@
             android:text="WAIKATO"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
-
-
+            android:textStyle="bold" />
 
 
     </LinearLayout>
