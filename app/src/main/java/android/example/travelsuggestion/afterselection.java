@@ -27,7 +27,18 @@ public class afterselection extends selection {
         setContentView(R.layout.activity_afterselection);
         mResult = findViewById(R.id.Results);
 
-        new afterselection.GetDataTask().execute("http://172.31.82.136:3000/destinations/" + test);
+
+        // System.out.println(keywords);
+      //  System.out.println(test);
+
+        String keyword1 =  keywords.get(0);
+        String keyword2 = keywords.get(1);
+       // String keyword3 = keywords.get(2);
+      // System.out.println(keyword1);
+       // System.out.println(keyword2);
+       // System.out.println(keyword3);
+
+        new afterselection.GetDataTask().execute("http://172.31.82.136:3000/Search/" + keyword1 + "/" + keyword2);
 
     }
 

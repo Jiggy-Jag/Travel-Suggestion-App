@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class selection extends AppCompatActivity {
 String test = "1";
-    ArrayList<String> keywords =new ArrayList<String>();
+    static ArrayList<String> keywords =new ArrayList<String>();
     BubblePicker bubblePicker;
     static String[] name={
             "Shopping", "Culture", "Sightseeing", "Wildlife", "Beaches",
@@ -83,6 +83,7 @@ String test = "1";
                 keywords.add(pickerItem.getTitle());
                 Toast.makeText(getApplicationContext(),x,Toast.LENGTH_SHORT).show();
 
+
 //                for(int i=0;i<7; i++) {
 //                    if(pickerItem.getTitle()==name[i]){
 //                        Intent intent = new Intent(getApplicationContext(), info_template.class);
@@ -110,6 +111,8 @@ String test = "1";
             Toast.makeText(getApplicationContext(),"Select at least 1",Toast.LENGTH_SHORT).show();
         }
         else{
+
+            // System.out.println(keywords);
             Intent intent = new Intent(getApplicationContext(), afterselection.class);
             startActivity(intent);
 
