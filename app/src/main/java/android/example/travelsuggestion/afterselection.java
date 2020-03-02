@@ -15,6 +15,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 import androidx.annotation.RequiresApi;
 
@@ -64,6 +65,7 @@ public class afterselection extends selection {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
+            ArrayList<Integer> idList = new ArrayList<Integer>();
 
             try {
                 JSONArray json = new JSONArray(result);
@@ -71,6 +73,7 @@ public class afterselection extends selection {
                 for(int i = 0; i < result.length(); i++){
                     JSONObject e = json.getJSONObject(i);
 
+                    idList.add(e.getInt("ID"));
                     int id = e.getInt("ID");
                     String country = e.getString("Country");
                     String keyword1 = e.getString("Keyword1");
@@ -80,7 +83,9 @@ public class afterselection extends selection {
                     String summary = e.getString("Summary");
                     String weather = e.getString("weather");
 
-                    mResult.append("ID: " + String.valueOf(id) + "\n Name: " + country + " \n Keywords: " + keyword1 + ", " + keyword2 + ", " + keyword3 + "\n" + "Summary: " + summary + "\n" + "Attractions: " + attractions + "\n\n\n");
+                   // mResult.append("ID: " + String.valueOf(id) + "\n Name: " + country + " \n Keywords: " + keyword1 + ", " + keyword2 + ", " + keyword3 + "\n" + "Summary: " + summary + "\n" + "Attractions: " + attractions + "\n\n\n");
+                    mResult.setText(idList + "ID");
+
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
