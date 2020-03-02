@@ -68,6 +68,14 @@
                 android:onClick="openBrowseActivity"
                 android:text="BROWSE"
                 android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/jsonParse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openJSONParseActivity"
+                android:text="JSON_Parse" />
+
         </LinearLayout>
 
         <Button
