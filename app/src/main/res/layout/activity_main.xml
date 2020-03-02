@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/mountain_bg">
+    android:background="@drawable/loginbg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,23 +19,21 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/custom_round_button"
             android:onClick="openActivityLoginScreen"
-            android:text="@string/login"
-            android:textColor="#FFFFFF" />
+            android:text="Login" />
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="241dp"
             android:layout_height="164dp"
+            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:contentDescription="logo"
             android:src="@drawable/logo"
             android:visibility="visible"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            android:layout_gravity="center"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,42 +46,35 @@
                 android:layout_width="200dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="7dp"
-                android:background="@drawable/custom_round_button"
-                android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:onClick="openActivityLetMeChoose"
-                android:text="@string/let_me_choose"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="Let me choose"
+                android:textSize="14dp" />
 
             <Button
                 android:id="@+id/btnHelpMePick"
                 android:layout_width="200dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
-                android:background="@drawable/custom_round_button"
-                android:fontFamily="sans-serif-medium"
                 android:onClick="openActivityHelpMeChoose"
-                android:text="@string/help_me_pick"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="Help me pick"
+                android:textSize="14dp" />
 
             <Button
                 android:id="@+id/btn_browse"
                 android:layout_width="200dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/custom_round_button"
-                android:fontFamily="sans-serif-medium"
                 android:onClick="openBrowseActivity"
-                android:text="@string/browse"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="BROWSE"
+                android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/jsonParse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="openJSONParseActivity"
+                android:text="JSON_Parse" />
 
         </LinearLayout>
 
@@ -92,18 +83,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="openHTTPActivity"
-            android:background="@drawable/custom_round_button"
-            android:textColor="#FFFFFF"
-            android:text="@string/http" />
+            android:layout_gravity="center"
+            android:text="HTTP" />
 
         <Button
             android:id="@+id/btn_RateUs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/custom_round_button"
             android:onClick="openRatingActivity"
-            android:text="@string/rate_us"
-            android:textColor="#FFFFFF" />
+            android:text="Rate Us" />
 
     </LinearLayout>
 
