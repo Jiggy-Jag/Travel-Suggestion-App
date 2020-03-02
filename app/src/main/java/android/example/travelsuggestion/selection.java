@@ -59,6 +59,7 @@ String test = "1";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection);
 
+
         bubblePicker= (BubblePicker) findViewById(R.id.picker);
         ArrayList<PickerItem> listItems=new ArrayList<>();
         for(int i=0;i<name.length;i++){
