@@ -1,9 +1,20 @@
 package android.example.travelsuggestion;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,31 +27,27 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import androidx.annotation.RequiresApi;
+public class JSONParse extends AppCompatActivity {
 
+    private TextView txtResult;
+    private Button btnParse;
+    private RequestQueue mQueue;
 
-public class afterselection extends selection {
-    private TextView mResult;
-
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_afterselection);
-        mResult = findViewById(R.id.Results);
+        setContentView(R.layout.activity_jsonparse);
+
+        txtResult = findViewById(R.id.textResult);
+        btnParse = findViewById(R.id.button_parse);
+
+    }
 
 
-        // System.out.println(keywords);
-      //  System.out.println(test);
 
-        String keyword1 =  keywords.get(0);
-        String keyword2 = keywords.get(1);
-       // String keyword3 = keywords.get(2);
-      // System.out.println(keyword1);
-       // System.out.println(keyword2);
-       // System.out.println(keyword3);
-
-        new afterselection.GetDataTask().execute("http://172.31.82.136:3000/Search/" + keyword1 + "/" + keyword2);
+    public void Test(View view) {
+        //make GET request when button is pressed
+        new GetDataTask().execute("http://172.31.82.136:3000/Countries/1");
 
     }
 
@@ -80,11 +87,13 @@ public class afterselection extends selection {
                     String summary = e.getString("Summary");
                     String weather = e.getString("weather");
 
-                    mResult.append("ID: " + String.valueOf(id) + "\n Name: " + country + " \n Keywords: " + keyword1 + ", " + keyword2 + ", " + keyword3 + "\n" + "Summary: " + summary + "\n" + "Attractions: " + attractions + "\n\n\n");
+                    txtResult.setText("ID: " + String.valueOf(id) + "\n Name: " + country + " \n Keywords: " + keyword1 + ", " + keyword2 + ", " + keyword3 + "\n" + "Summary: " + summary + "\n" + "Attractions: " + attractions + "\n\n\n");
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+
         }
 
 
@@ -117,6 +126,8 @@ public class afterselection extends selection {
 
 
             return result.toString();
+
+
         }
 
     }

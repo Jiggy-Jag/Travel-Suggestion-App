@@ -42,6 +42,28 @@ app.get('/destinations/:id', (req, res) => {
     });
 
 });
+app.get('/Countries', (req, res) => {
+    // Get specific dest_ID from the database
+        let sql = 'Select * FROM Countries';
+        db.query(sql, (err, result) => {
+            if (err) console.log('Please enter the correct id');
+            res.send(result);
+    
+        });
+    
+ });
+
+ app.get('/Countries/:id', (req, res) => {
+    // Get specific dest_ID from the database
+        let sql = `SELECT * FROM Countries WHERE ID = ${req.params.id}`;
+        db.query(sql, (err, result) => {
+            if (err) console.log('Please enter the correct id');
+            res.send(result);
+    
+        });
+    
+ });
+
 app.get('/Search/:keyword1/:keyword2/:keyword3', (req, res) => {
 // Search for the keywords where keyword 1 or 2 or 3 = parameter 1, 2 and 3
     let sql = `SELECT * FROM Countries WHERE Keyword1 ="${req.params.keyword1}" OR Keyword2 = "${req.params.keyword1}" OR Keyword3 = "${req.params.keyword1}" AND  Keyword1 = "${req.params.keyword2}" OR Keyword2 = "${req.params.keyword2}" OR Keyword3 = "${req.params.keyword2}" AND Keyword1 = "${req.params.keyword3}" OR Keyword2 = "${req.params.keyword3}" OR Keyword3 = "${req.params.keyword3}" `;
