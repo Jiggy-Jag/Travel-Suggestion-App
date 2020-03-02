@@ -5,7 +5,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -62,7 +64,27 @@ public class afterselection extends selection {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            mResult.setText(result);
+
+            try {
+                JSONArray json = new JSONArray(result);
+
+                for(int i = 0; i < result.length(); i++){
+                    JSONObject e = json.getJSONObject(i);
+
+                    int id = e.getInt("ID");
+                    String country = e.getString("Country");
+                    String keyword1 = e.getString("Keyword1");
+                    String keyword2 = e.getString("Keyword2");
+                    String keyword3 = e.getString("Keyword3");
+                    String attractions = e.getString("Attractions");
+                    String summary = e.getString("Summary");
+                    String weather = e.getString("weather");
+
+                    mResult.append("ID: " + String.valueOf(id) + "\n Name: " + country + " \n Keywords: " + keyword1 + ", " + keyword2 + ", " + keyword3 + "\n" + "Summary: " + summary + "\n" + "Attractions: " + attractions + "\n\n\n");
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
 
 
