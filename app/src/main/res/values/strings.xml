@@ -6,4 +6,11 @@
     <string name="username">Username</string>
     <string name="button">Next</string>
     <string name="title_activity_maps">Map</string>
+    <string name="let_me_choose">LET ME CHOOSE</string>
+    <string name="help_me_pick">HELP ME PICK</string>
+    <string name="browse">BROWSE</string>
+    <string name="login">LOGIN</string>
+    <string name="http">HTTP</string>
+    <string name="rate_us">RATE US</string>
+    <string name="todo">TODO</string>
 </resources>
