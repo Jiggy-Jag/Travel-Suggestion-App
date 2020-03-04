@@ -16,33 +16,53 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Random;
 
 import androidx.annotation.RequiresApi;
 
 
 public class afterselection extends selection {
-    private TextView mResult;
+    private TextView title,txt_summary,txt_attractions;
+    static private Random rand;
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_afterselection);
-        mResult = findViewById(R.id.Results);
-
-
-        // System.out.println(keywords);
-      //  System.out.println(test);
+        title = findViewById(R.id.name);
+        txt_summary = findViewById(R.id.txt_summary);
+        txt_attractions = findViewById(R.id.txt_attractions);
 
         String keyword1 =  keywords.get(0);
         String keyword2 = keywords.get(1);
-       // String keyword3 = keywords.get(2);
-      // System.out.println(keyword1);
-       // System.out.println(keyword2);
-       // System.out.println(keyword3);
 
-        new afterselection.GetDataTask().execute("http://172.31.82.136:3000/Search/" + keyword1 + "/" + keyword2);
+        if(keywords.size() == 2){ new GetDataTask().execute("http://172.31.82.136:3000/Search/" + keyword1 + "/" + keyword2); }
+        else { new GetDataTask().execute("http://172.31.82.136:3000/Search/" + keyword1 ); }
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        keywords.clear();
+    }
+
+    public int RandomNumber(int aa, int bb)
+    {
+        int a = Math.min(aa,bb);
+        int b = Math.max(aa,bb);
+        if (rand == null)
+        {
+            rand = new Random();
+            rand.setSeed(System.nanoTime());
+        }
+        int d = b - a + 1;
+        int x = rand.nextInt(d) + a;
+        return(x);
     }
 
     class GetDataTask extends AsyncTask<String, Void, String> {
@@ -62,31 +82,36 @@ public class afterselection extends selection {
             }
         }
 
+
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            ArrayList<Integer> idList = new ArrayList<Integer>();
-
+            ArrayList<Integer> idList = new ArrayList<Integer>();//store all the ID's of the countries
             try {
                 JSONArray json = new JSONArray(result);
+                int random = RandomNumber(1,json.length());
+                JSONObject e = json.getJSONObject(random);
+                int id = e.getInt("ID");
+                String country = e.getString("Country");
+                String attractions = e.getString("Attractions");
+                String summary = e.getString("Summary");
 
-                for(int i = 0; i < result.length(); i++){
-                    JSONObject e = json.getJSONObject(i);
+                title.setText(country);
+                txt_summary.setText(summary);
+                txt_attractions.setText(attractions);
 
-                    idList.add(e.getInt("ID"));
-                    int id = e.getInt("ID");
-                    String country = e.getString("Country");
-                    String keyword1 = e.getString("Keyword1");
-                    String keyword2 = e.getString("Keyword2");
-                    String keyword3 = e.getString("Keyword3");
-                    String attractions = e.getString("Attractions");
-                    String summary = e.getString("Summary");
-                    String weather = e.getString("weather");
 
-                   // mResult.append("ID: " + String.valueOf(id) + "\n Name: " + country + " \n Keywords: " + keyword1 + ", " + keyword2 + ", " + keyword3 + "\n" + "Summary: " + summary + "\n" + "Attractions: " + attractions + "\n\n\n");
-                    mResult.setText(idList + "ID");
+//                for(int i = 0; i < result.length(); i++){
+//                    JSONObject e = json.getJSONObject(i);
+//                    idList.add(e.getInt("ID"));
+//                    int id = e.getInt("ID");
+//                    String weather = e.getString("weather");
+//
+//                    mResult.append("ID: " + String.valueOf(id) + "\n Name: " + country + " \n Keywords: " + keyword1 + ", " + keyword2 + ", " + keyword3 + "\n" + "Summary: " + summary + "\n" + "Attractions: " + attractions + "\n\n\n");
+//                }
 
-                }
+
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

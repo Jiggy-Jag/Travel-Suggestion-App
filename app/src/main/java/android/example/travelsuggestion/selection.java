@@ -72,9 +72,7 @@ String test = "1";
             @Override
             public void onBubbleDeselected(@NotNull PickerItem pickerItem) {
 
-
                 keywords.remove(pickerItem.getTitle());
-
 
             }
 
@@ -83,24 +81,10 @@ String test = "1";
                 String x = pickerItem.getTitle();
                 keywords.add(pickerItem.getTitle());
                 Toast.makeText(getApplicationContext(),x,Toast.LENGTH_SHORT).show();
-
-
-//                for(int i=0;i<7; i++) {
-//                    if(pickerItem.getTitle()==name[i]){
-//                        Intent intent = new Intent(getApplicationContext(), info_template.class);
-//                        startActivity(intent);
-//                    }
-//                }
-
-
             }
-
-
         });
 
     }
-
-
 
     public void onClick( View view){
 
@@ -112,11 +96,8 @@ String test = "1";
             Toast.makeText(getApplicationContext(),"Select at least 1",Toast.LENGTH_SHORT).show();
         }
         else{
-
-            // System.out.println(keywords);
             Intent intent = new Intent(getApplicationContext(), afterselection.class);
             startActivity(intent);
-
         }
     }
 }

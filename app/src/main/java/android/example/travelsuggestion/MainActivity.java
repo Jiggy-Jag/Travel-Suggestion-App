@@ -62,10 +62,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-    //JSON parse activity for testing ONLY !!!
-    public void openJSONParseActivity(View view){
-        Intent intent = new Intent(this, JSONParse.class);
-        startActivity(intent);
-    }
 
 }
