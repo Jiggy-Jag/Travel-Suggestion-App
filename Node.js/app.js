@@ -40,6 +40,7 @@ app.get('/destinations/:id', (req, res) => {
     db.query(sql, (err, result) => {
         if (err) console.log('Please enter the correct id');
         res.send(result);
+        console.log("User searched" + req);
 
     });
 
@@ -50,7 +51,7 @@ app.get('/Search/:keyword1/:keyword2/:keyword3', (req, res) => {
     db.query(sql, (err, result) => {
         if (err) throw err;
         res.send(result);
-
+        console.log("User searched" + req);
 
     });
 
@@ -62,6 +63,7 @@ app.get('/Search/:keyword1/:keyword2', (req, res) => {
     db.query(sql, (err, result) => {
         if (err) throw err;
         res.send(result);
+        console.log("User searched" + req);
 
     });
 
@@ -72,6 +74,7 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
+         console.log("User searched" + req);
 
      });
 
@@ -82,7 +85,7 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
-
+         console.log("User searched" + req);
      });
 
  });
@@ -93,6 +96,7 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
+         console.log("User searched" + req);
 
      });
 
@@ -103,10 +107,13 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
+         console.log("User searched" + req);
 
      });
 
  });
+
+
 
 
 
