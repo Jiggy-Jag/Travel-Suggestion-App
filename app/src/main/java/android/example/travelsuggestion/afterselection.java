@@ -36,14 +36,21 @@ public class afterselection extends selection {
         txt_summary = findViewById(R.id.txt_summary);
         txt_attractions = findViewById(R.id.txt_attractions);
 
-        String keyword1 =  keywords.get(0);
-        String keyword2 = keywords.get(1);
+        String keyword1 = keywords.get(0);
 
-        if(keywords.size() == 2){ new GetDataTask().execute("http://172.31.82.136:3000/Search/" + keyword1 + "/" + keyword2); }
-        else { new GetDataTask().execute("http://172.31.82.136:3000/Search/" + keyword1 ); }
+        if (keywords.size() == 2 ){
+            String keyword2 = keywords.get(1);
+            new afterselection.GetDataTask().execute("http://172.31.82.136:5000/Search/" + keyword1 + "/" + keyword2);
+        }
+else {
+            new afterselection.GetDataTask().execute("http://172.31.82.136:5000/Search/" + keyword1 + "/" );
+        }
 
 
     }
+
+
+
 
     @Override
     public void onBackPressed() {
