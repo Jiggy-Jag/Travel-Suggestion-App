@@ -1,23 +1,10 @@
 const express = require('express');
+const mysql1 = require('../mongodbtest/database');
 const mysql = require('mysql');
 
 
 // Create connection
-const db = mysql.createConnection({
-
-    host : 'localhost',
-    user : 'root',
-    password : '' ,
-    database : 'travelapp'
-
-});
-// Establish connection
-db.connect((err) => {
-    if (err){
-        console.log('Error, Failure to connect');
-    }
-        console.log('MySQL Connected');
-});
+var db = mysql1.con;
 
 
 const app = express();
@@ -30,6 +17,7 @@ app.get('/destinations', (req, res) => {
         if (err) throw err;
         res.send(result);
 
+
     });
 
 });
@@ -40,7 +28,7 @@ app.get('/destinations/:id', (req, res) => {
     db.query(sql, (err, result) => {
         if (err) console.log('Please enter the correct id');
         res.send(result);
-        console.log("User searched" + req);
+        console.log("User searched" + " " + req.params.id);
 
     });
 
@@ -51,7 +39,7 @@ app.get('/Search/:keyword1/:keyword2/:keyword3', (req, res) => {
     db.query(sql, (err, result) => {
         if (err) throw err;
         res.send(result);
-        console.log("User searched" + req);
+        console.log("User searched" + " " + req.params.keyword1 + " " + req.params.keyword2 + " " + req.params.keyword3);
 
     });
 
@@ -63,7 +51,7 @@ app.get('/Search/:keyword1/:keyword2', (req, res) => {
     db.query(sql, (err, result) => {
         if (err) throw err;
         res.send(result);
-        console.log("User searched" + req);
+        console.log("User searched" + " " + req.params.keyword1 + " " + req.params.keyword2 );
 
     });
 
@@ -74,7 +62,7 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
-         console.log("User searched" + req);
+         console.log("User searched" + " " + req.params.keyword1);
 
      });
 
@@ -85,7 +73,7 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
-         console.log("User searched" + req);
+         console.log("User searched" + " " + req.params.country);
      });
 
  });
@@ -96,7 +84,7 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
-         console.log("User searched" + req);
+         console.log("User searched" + " " + req.params.country1);
 
      });
 
@@ -107,7 +95,7 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
-         console.log("User searched" + req);
+         console.log("User searched" + " " + req.params.country1);
 
      });
 
