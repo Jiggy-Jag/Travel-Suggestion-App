@@ -17,16 +17,10 @@ con.connect((err) => {
         console.log('MySQL successfully Connected');
 });
 
-function select(query)
-{
-    con.query(query,function(err,result){
-        if(err) throw err;
-        return result;
-    });
-}
+
 
 module.exports = {
 
     con,
-    select : select
+
 }
