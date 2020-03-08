@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/browse_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="10dp"
+    android:scrollbarThumbVertical="@drawable/scroll_thumb"
+    android:scrollbarTrackVertical="@drawable/scroll_track"
+    tools:context=".browse_continents">0-0980-98
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/custom_africa_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_africa_continent"
+            android:text="@string/africa"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/custom_antarctica_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_antarctica_continent"
+            android:text="@string/antarctica"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/custom_asia_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_asia_continent"
+            android:text="@string/asia"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/custom_australia_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_australia_continent"
+            android:text="@string/australia"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/custom_europe_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_europe_continent"
+            android:text="@string/europe"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/custom_na_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_na_continent"
+            android:text="@string/north_america"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/custom_sa_btn"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_sa_continent"
+            android:text="@string/south_america"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    </ScrollView>

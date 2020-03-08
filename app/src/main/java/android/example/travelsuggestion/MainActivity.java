@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-    public void openBrowseActivity(View view) {
-        Intent intent = new Intent(this, browse_screen.class);
+    public void openActivityBrowseContinents(View view) {
+        Intent intent = new Intent(this, browse_continents.class);
         startActivity(intent);
 
     }

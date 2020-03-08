@@ -13,4 +13,12 @@
     <string name="http">HTTP</string>
     <string name="rate_us">RATE US</string>
     <string name="todo">TODO</string>
+    <string name="africa">AFRICA</string>
+    <string name="antarctica">antarctica</string>
+    <string name="australia">australia</string>
+    <string name="asia">asia</string>
+    <string name="south_america">south america</string>
+    <string name="north_america">north america</string>
+    <string name="europe">europe</string>
+    <string name="json_parse">JSON_Parse</string>
 </resources>
