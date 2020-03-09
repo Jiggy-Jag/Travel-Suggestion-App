@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/browse_screen"
+    android:id="@+id/browse_continents"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbarSize="10dp"
     android:scrollbarThumbVertical="@drawable/scroll_thumb"
     android:scrollbarTrackVertical="@drawable/scroll_track"
-    tools:context=".browse_continents">0-0980-98
+    tools:context=".browse_continents">
+
 
     <LinearLayout
         android:layout_width="match_parent"
