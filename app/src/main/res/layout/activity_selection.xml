@@ -23,6 +23,12 @@
         android:layout_marginRight="27dp"
         android:layout_marginBottom="61dp"
         android:onClick="onClick"
+        android:background="@drawable/custom_round_button"
+        android:fontFamily="sans-serif"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:alpha="0.5"
         android:text="@string/button" />
 
 </RelativeLayout>
