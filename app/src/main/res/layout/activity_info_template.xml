@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,141 +15,56 @@
             android:id="@+id/background_image"
             android:layout_width="match_parent"
             android:layout_height="230dp"
-            android:background="@drawable/losangeles_pressed"
+            android:background="@drawable/hong_kong_pressed"
             android:gravity="center"
-            android:text="LOS ANGELES"
+            android:text="@string/hong_kong"
             android:textAllCaps="true"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/title1"
+            android:id="@+id/climate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
             android:gravity="center"
-            android:text="Summary"
-            android:textSize="26dp"
+            android:text="@string/climate_mild_17_c_to_hot_30_c"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txt_summary"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="15dp"
-            android:text="Los Angeles is a sprawling Southern California city and the centre of the nation’s film and television industry. Near its iconic Hollywood sign, studios such as Paramount Pictures, Universal and Warner Brothers offer behind-the-scenes tours."
-            android:textSize="20dp"
+            android:gravity="center"
+            android:text="@string/hong_kong_welcomes_with_an_iconic_skyline_a_legendary_kitchen_and_lush_protected_nature_where_rare_birds_and_colourful_traditions_thrive_hong_kong_s_enchanting_neighbourhoods_and_islands_offer_a_sensory_feast_you_may_find_yourself_swaying_along_on_a_historic_double_decker_tram_cheering_with_the_hordes_at_the_city_centre_horse_races_or_simply_gazing_out_at_the_glorious_harbour"
+            android:textColor="#4A4646"
+            android:textSize="18sp"
             android:textStyle="italic" />
 
         <TextView
-            android:id="@+id/title2"
+            android:id="@+id/attractions"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Overview"
-            android:textSize="26dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
-
-            <RadioButton
-                android:id="@+id/key_word_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:checked="false"
-                android:clickable="false"
-                android:text="Sunshine" />
-
-            <RadioButton
-
-                android:id="@+id/key_word_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:checked="false"
-                android:clickable="false"
-                android:text="Beaches" />
-
-            <RadioButton
-
-                android:id="@+id/key_word_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:checked="false"
-                android:clickable="false"
-                android:text="Endless Experience" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <RadioButton
-
-                android:id="@+id/key_word_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:checked="false"
-                android:clickable="false"
-                android:text="Nation's film and televsion inustry" />
-
-            <RadioButton
-
-                android:id="@+id/key_word_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_weight="1"
-                android:checked="false"
-                android:clickable="false"
-                android:text="Hollywood sign" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/title3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Weather"
-            android:textSize="26dp"
+            android:text="@string/recommended_attractions"
+            android:textColor="#3F3C3C"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txt_weather_info"
-            android:layout_width="263dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_weight="1"
-            android:text="Mild (15°C +) to Hot (25°C +)"
-            android:textSize="20dp"
-            android:textStyle="italic"
-            android:layout_gravity="center"/>
-
-        <Button
-            android:id="@+id/button"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Home"
-            android:textSize="14dp" />
+            app:srcCompat="@drawable/victoriapeak_hk" />
 
     </LinearLayout>
 </ScrollView>
