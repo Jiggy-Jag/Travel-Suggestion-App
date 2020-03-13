@@ -101,6 +101,18 @@ app.get('/Search/:keyword1', (req, res) => {
 
  });
 
+ app.post('/Rating/:rating/:comment', (req, res) => { // rating_id , ratingvalue , comments, pk: rating_id
+    // Search for attractions for a specific country
+     let sql = `INSERT INTO rating(ratingvalue, comments) VALUES (${req.params.rating} , "${req.params.comment}") `;
+     db.query(sql, (err, result) => {
+         if (err) throw err;
+         res.send(result);
+         console.log("User rated" + " " + req.params.rating + " " + req.params.comment);
+
+     });
+
+ });
+
 
 
 
