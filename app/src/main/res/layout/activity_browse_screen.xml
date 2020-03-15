@@ -7,7 +7,7 @@
     android:scrollbarSize="10dp"
     android:scrollbarThumbVertical="@drawable/scroll_thumb"
     android:scrollbarTrackVertical="@drawable/scroll_track"
-    tools:context=".browse_screen">0-0980-98
+    tools:context=".browse_screen">
 
     <LinearLayout
         android:layout_width="match_parent"

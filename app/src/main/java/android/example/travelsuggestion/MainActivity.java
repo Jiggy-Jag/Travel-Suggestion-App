@@ -62,5 +62,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, http_test.class);
         startActivity(intent);
     }
+    public void openTest(View view) {
+        Intent intent = new Intent(this, SelectionButtons.class);
+        startActivity(intent);
+    }
 
 }

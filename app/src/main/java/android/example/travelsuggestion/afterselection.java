@@ -20,11 +20,12 @@ import java.util.Random;
 
 import androidx.annotation.RequiresApi;
 
+import static android.example.travelsuggestion.SelectionButtons.keywords;
+
 
 public class afterselection extends selection {
     private TextView title,txt_summary,txt_attractions;
     static private Random rand;
-
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -93,19 +94,21 @@ else {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            ArrayList<Integer> idList = new ArrayList<Integer>();//store all the ID's of the countries
-            try {
-                JSONArray json = new JSONArray(result);
-                int random = RandomNumber(1,json.length());
-                JSONObject e = json.getJSONObject(random);
-                int id = e.getInt("ID");
-                String country = e.getString("Country");
-                String attractions = e.getString("Attractions");
-                String summary = e.getString("Summary");
-
-                title.setText(country);
-                txt_summary.setText(summary);
-                txt_attractions.setText(attractions);
+            title.setText(result);
+//
+//            ArrayList<Integer> idList = new ArrayList<Integer>();//store all the ID's of the countries
+//            try {
+//                JSONArray json = new JSONArray(result);
+//                int random = RandomNumber(1,json.length());
+//                JSONObject e = json.getJSONObject(random);
+//                int id = e.getInt("ID");
+//                String country = e.getString("Country");
+//                String attractions = e.getString("Attractions");
+//                String summary = e.getString("Summary");
+//
+//                title.setText(country);
+//                txt_summary.setText(summary);
+//                txt_attractions.setText(attractions);
 
 
 //                for(int i = 0; i < result.length(); i++){
@@ -119,9 +122,9 @@ else {
 
 
 
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+//            } catch (JSONException e) {
+////                e.printStackTrace();
+////            }
         }
 
 
