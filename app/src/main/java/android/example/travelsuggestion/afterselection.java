@@ -1,5 +1,6 @@
 package android.example.travelsuggestion;
 
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,6 +22,15 @@ import java.util.Random;
 import androidx.annotation.RequiresApi;
 
 import static android.example.travelsuggestion.SelectionButtons.keywords;
+import static android.example.travelsuggestion.SelectionButtons.selected_shopping;
+import static android.example.travelsuggestion.SelectionButtons.selected_culture;
+import static android.example.travelsuggestion.SelectionButtons.selected_sightseeing;
+import static android.example.travelsuggestion.SelectionButtons.selected_Wildlife;
+import static android.example.travelsuggestion.SelectionButtons.selected_Beaches;
+import static android.example.travelsuggestion.SelectionButtons.selected_Scenic_views;
+import static android.example.travelsuggestion.SelectionButtons.selected_Island;
+import static android.example.travelsuggestion.SelectionButtons.selected_Romantic;
+import static android.example.travelsuggestion.SelectionButtons.selected_Adventures;
 
 
 public class afterselection extends selection {
@@ -41,10 +51,10 @@ public class afterselection extends selection {
 
         if (keywords.size() == 2 ){
             String keyword2 = keywords.get(1);
-            new afterselection.GetDataTask().execute("http://172.31.82.136:5000/Search/" + keyword1 + "/" + keyword2);
+            new afterselection.GetDataTask().execute("http://172.31.82.136:3000/Search/" + keyword1 + "/" + keyword2);
         }
 else {
-            new afterselection.GetDataTask().execute("http://172.31.82.136:5000/Search/" + keyword1 + "/" );
+            new afterselection.GetDataTask().execute("http://172.31.82.136:3000/Search/" + keyword1 + "/" );
         }
 
 
@@ -55,8 +65,20 @@ else {
 
     @Override
     public void onBackPressed() {
+
+        //Reset values of previous
         super.onBackPressed();
         keywords.clear();
+        selected_shopping.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_culture.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_sightseeing.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_Wildlife.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_Beaches.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_Scenic_views.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_Island.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_Romantic.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_Adventures.setBackgroundColor(Color.parseColor("#CACFD2"));
+
     }
 
     public int RandomNumber(int aa, int bb)
@@ -94,21 +116,21 @@ else {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            title.setText(result);
-//
-//            ArrayList<Integer> idList = new ArrayList<Integer>();//store all the ID's of the countries
-//            try {
-//                JSONArray json = new JSONArray(result);
-//                int random = RandomNumber(1,json.length());
-//                JSONObject e = json.getJSONObject(random);
-//                int id = e.getInt("ID");
-//                String country = e.getString("Country");
-//                String attractions = e.getString("Attractions");
-//                String summary = e.getString("Summary");
-//
-//                title.setText(country);
-//                txt_summary.setText(summary);
-//                txt_attractions.setText(attractions);
+
+
+            ArrayList<Integer> idList = new ArrayList<Integer>();//store all the ID's of the countries
+            try {
+                JSONArray json = new JSONArray(result);
+                int random = RandomNumber(1,json.length());
+                JSONObject e = json.getJSONObject(random);
+                int id = e.getInt("ID");
+                String country = e.getString("Country");
+                String attractions = e.getString("Attractions");
+                String summary = e.getString("Summary");
+
+                title.setText(country);
+                txt_summary.setText(summary);
+                txt_attractions.setText(attractions);
 
 
 //                for(int i = 0; i < result.length(); i++){
@@ -122,9 +144,9 @@ else {
 
 
 
-//            } catch (JSONException e) {
-////                e.printStackTrace();
-////            }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
 
 
