@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectionButtons">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp">
+
+    <!--Shopping button-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/Shopping"
+            android:text="Shopping"
+            android:textColor="@drawable/selection"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="@drawable/shopping"
+            android:onClick="onClickShopping" />
+
+        <TextView
+            android:id="@+id/selected_shopping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="#CACFD2"/>
+
+
+    <!-- Culture button-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/Culture"
+            android:text="Culture"
+            android:textColor="@drawable/selection"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="@drawable/culture"
+            android:onClick="onClickCulture" />
+
+        <TextView
+            android:id="@+id/selected_culture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="#CACFD2"/>
+
+        <!-- Sightseeing button-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/Sightseeing"
+            android:text="Sightseeing"
+            android:textColor="@drawable/selection"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="@drawable/sightseeing"
+            android:onClick="onClickSightseeing" />
+        <TextView
+            android:id="@+id/selected_sightseeing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="#CACFD2"/>
+
+
+        <!-- Wildlife button-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/Wildlife"
+            android:text="Wildlife"
+            android:textColor="@drawable/selection"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="@drawable/wildlife"
+            android:onClick="onClickWildlife"/>
+        <TextView
+            android:id="@+id/selected_Wildlife"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="#CACFD2"/>
+
+        <!-- Beaches  button-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/Beaches"
+            android:text="Beaches"
+            android:textColor="@drawable/selection"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="@drawable/beaches"
+            android:onClick="onClickBeaches" />
+        <TextView
+            android:id="@+id/selected_Beaches"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="#CACFD2"/>
+
+        <!-- Scenic Views button-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/Scenic_Views"
+            android:text="Scenic Views"
+            android:textColor="@drawable/selection"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="@drawable/scenic_views"
+            android:onClick="onClickScenic_Views" />
+        <TextView
+            android:id="@+id/selected_Scenic_Views"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="#CACFD2"/>
+
+        <!-- Island button-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/Island"
+            android:text="Island"
+            android:textColor="@drawable/selection"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="@drawable/islands"
+            android:onClick="onClickIsland" />
+        <TextView
+            android:id="@+id/selected_Island"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="#CACFD2"/>
+
+        <!-- Romantic button-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/Romantic"
+            android:text="Romantic"
+            android:textColor="@drawable/selection"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="@drawable/romantic"
+            android:onClick="onClickRomantic" />
+        <TextView
+            android:id="@+id/selected_Romantic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="#CACFD2"/>
+
+        <!-- Adventurous button-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/Adventurous"
+            android:text="Adventurous"
+            android:textColor="@drawable/selection"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="@drawable/adventurous"
+            android:onClick="onClickAdventurous" />
+        <TextView
+            android:id="@+id/selected_Adventurous"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="#CACFD2"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/Next"
+            android:text="Next"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:onClick="onClickNext"
+            android:layout_marginBottom="20dp"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
