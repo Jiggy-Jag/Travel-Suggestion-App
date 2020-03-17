@@ -1,9 +1,17 @@
 package android.example.travelsuggestion;
 
+<<<<<<< Updated upstream
+=======
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+>>>>>>> Stashed changes
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,9 +32,14 @@ import androidx.annotation.RequiresApi;
 public class afterselection extends selection {
     private TextView title,txt_summary,txt_attractions;
     static private Random rand;
+    String country;
+
+<<<<<<< Updated upstream
 
 
-
+=======
+    static ArrayList<String> Favorite = new ArrayList<String>();
+>>>>>>> Stashed changes
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,17 +53,33 @@ public class afterselection extends selection {
 
         if (keywords.size() == 2 ){
             String keyword2 = keywords.get(1);
+<<<<<<< Updated upstream
             new afterselection.GetDataTask().execute("http://172.31.82.136:5000/Search/" + keyword1 + "/" + keyword2);
         }
 else {
             new afterselection.GetDataTask().execute("http://172.31.82.136:5000/Search/" + keyword1 + "/" );
+=======
+            new afterselection.GetDataTask().execute("http://172.31.82.136:4000/Search/" + keyword1 + "/" + keyword2);
         }
-
+        else {
+            new afterselection.GetDataTask().execute("http://172.31.82.136:4000/Search/" + keyword1 + "/" );
+>>>>>>> Stashed changes
+        }
 
     }
 
-
-
+    public void onClickFavorite(View view){
+        if(Favorite.contains(country) ){
+            Favorite.remove(country);
+            Toast.makeText(getApplicationContext(),country + " removed from favorites",Toast.LENGTH_SHORT).show();
+            view.setBackgroundResource(R.drawable.favorite);
+        }
+        else{
+            Favorite.add(country);
+            Toast.makeText(getApplicationContext(),country + " added to favorites",Toast.LENGTH_SHORT).show();
+            view.setBackgroundResource(R.drawable.favorite_pressed);
+        }
+    }
 
     @Override
     public void onBackPressed() {
@@ -93,13 +122,20 @@ else {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
             ArrayList<Integer> idList = new ArrayList<Integer>();//store all the ID's of the countries
             try {
                 JSONArray json = new JSONArray(result);
                 int random = RandomNumber(1,json.length());
                 JSONObject e = json.getJSONObject(random);
+
                 int id = e.getInt("ID");
-                String country = e.getString("Country");
+                country = e.getString("Country");
                 String attractions = e.getString("Attractions");
                 String summary = e.getString("Summary");
 
@@ -157,4 +193,7 @@ else {
         }
 
     }
+
+
+
 }
