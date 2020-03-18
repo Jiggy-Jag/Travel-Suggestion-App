@@ -27,6 +27,8 @@ import java.util.Random;
 
 import androidx.annotation.RequiresApi;
 
+import static android.example.travelsuggestion.Favourite.globalIndex;
+import static android.example.travelsuggestion.Favourite.loadFav;
 import static android.example.travelsuggestion.SelectionButtons.keywords;
 import static android.example.travelsuggestion.SelectionButtons.selected_shopping;
 import static android.example.travelsuggestion.SelectionButtons.selected_culture;
@@ -43,9 +45,12 @@ public class afterselection extends selection {
     private TextView title,txt_summary,txt_attractions;
     static private Random rand;
     String country;
+    int id;
 
 
     static ArrayList<String> Favorite = new ArrayList<String>();
+    static ArrayList<Integer> idList = new ArrayList<Integer>();//store all the ID's of the countries
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -58,26 +63,34 @@ public class afterselection extends selection {
 
         String keyword1 = keywords.get(0);
 
-        if (keywords.size() == 2 ){
-            String keyword2 = keywords.get(1);
 
-            new afterselection.GetDataTask().execute("http://172.31.82.136:4000/Search/" + keyword1 + "/" + keyword2);
-        }
-        else {
-            new afterselection.GetDataTask().execute("http://172.31.82.136:4000/Search/" + keyword1 + "/" );
+        if (loadFav == true){
 
+            new afterselection.GetDataTask().execute("http://172.31.82.136:4000/destinations/" + idList.get(globalIndex));
         }
+        else{
+            if (keywords.size() == 2 ){
+                String keyword2 = keywords.get(1);
+                new afterselection.GetDataTask().execute("http://172.31.82.136:4000/Search/" + keyword1 + "/" + keyword2);
+            }
+            else {
+                new afterselection.GetDataTask().execute("http://172.31.82.136:4000/Search/" + keyword1 + "/" );
+            }
+        }
+
 
     }
 
     public void onClickFavorite(View view){
         if(Favorite.contains(country) ){
             Favorite.remove(country);
+            idList.remove(id);
             Toast.makeText(getApplicationContext(),country + " removed from favorites",Toast.LENGTH_SHORT).show();
             view.setBackgroundResource(R.drawable.favorite);
         }
         else{
             Favorite.add(country);
+            idList.add(id);
             Toast.makeText(getApplicationContext(),country + " added to favorites",Toast.LENGTH_SHORT).show();
             view.setBackgroundResource(R.drawable.favorite_pressed);
         }
@@ -138,16 +151,16 @@ public class afterselection extends selection {
             super.onPostExecute(result);
 
 
-            ArrayList<Integer> idList = new ArrayList<Integer>();//store all the ID's of the countries
             try {
                 JSONArray json = new JSONArray(result);
                 int random = RandomNumber(1,json.length());
                 JSONObject e = json.getJSONObject(random);
 
-                int id = e.getInt("ID");
+                id = e.getInt("ID");
                 country = e.getString("Country");
                 String attractions = e.getString("Attractions");
                 String summary = e.getString("Summary");
+
 
                 title.setText(country);
                 txt_summary.setText(summary);

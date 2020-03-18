@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SelectionButtons"></activity>
+        <activity android:name=".Favourite"></activity>
+        <activity android:name=".SelectionButtons" />
         <activity android:name=".info_template" />
         <activity android:name=".vancouverinfo" />
         <!--

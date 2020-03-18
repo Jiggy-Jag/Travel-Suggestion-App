@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import java.io.Console;
 import java.util.ArrayList;
+import static android.example.travelsuggestion.Favourite.loadFav;
+
 
 public class SelectionButtons extends AppCompatActivity {
 
@@ -24,6 +26,8 @@ public class SelectionButtons extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection_buttons);
+
+        loadFav = false;
 
 
         //----------Buttons for selection of keywords
