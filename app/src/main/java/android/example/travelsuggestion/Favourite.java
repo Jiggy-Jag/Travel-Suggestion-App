@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -81,6 +82,7 @@ public class Favourite extends AppCompatActivity {
                 // Give button an ID
                 btn2.setId(j+1);
                 btn2.setText("Remove");
+
                 btn2.setPadding(20,10,20,0);
 
 

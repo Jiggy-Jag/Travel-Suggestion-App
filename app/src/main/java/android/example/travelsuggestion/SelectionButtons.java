@@ -73,6 +73,14 @@ public class SelectionButtons extends AppCompatActivity {
 
     }
 
+    public void onBackPressed(View view) {
+
+        //Reset values of previous
+        super.onBackPressed();
+        keywords.clear();
+
+    }
+
     public void onClickCulture(View view){
 
 

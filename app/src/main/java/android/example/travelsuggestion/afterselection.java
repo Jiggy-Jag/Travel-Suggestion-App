@@ -1,6 +1,7 @@
 package android.example.travelsuggestion;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 
@@ -96,8 +97,11 @@ public class afterselection extends selection {
         }
     }
 
-    @Override
-    public void onBackPressed() {
+    public void onClickHome(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+    public void onBackPressed(View view) {
 
         //Reset values of previous
         super.onBackPressed();
@@ -111,6 +115,16 @@ public class afterselection extends selection {
         selected_Island.setBackgroundColor(Color.parseColor("#CACFD2"));
         selected_Romantic.setBackgroundColor(Color.parseColor("#CACFD2"));
         selected_Adventures.setBackgroundColor(Color.parseColor("#CACFD2"));
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        //Reset values of previous
+        super.onBackPressed();
+        keywords.clear();
+
 
     }
 
