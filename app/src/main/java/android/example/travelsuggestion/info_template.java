@@ -14,15 +14,30 @@ import android.widget.TextView;
 
 public class info_template extends AppCompatActivity {
 
+    Button bt;
     TextView text_summary;
     TextView image;
     RadioButton key_word1 , key_word2 , key_word3, key_word4, key_word5;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_template);
+        bt=(Button)findViewById(R.id.button);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Intent.ACTION_SEND);
+                myIntent.setType("text/plain");
+                String shareBody = "your body here";
+                String shareSub = "your subject here";
+                myIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
+                myIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                startActivity(Intent.createChooser(myIntent, "share using"));
+            }
+        });
         //init layout objects
         text_summary = (TextView) findViewById(R.id.txt_summary);
         image = (TextView) findViewById(R.id.background_image) ;
