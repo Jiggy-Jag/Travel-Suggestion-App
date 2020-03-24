@@ -41,6 +41,7 @@
         <activity android:name=".LoginScreen" />
         <activity android:name=".map" />
         <activity android:name=".selection" />
+        <activity android:name=".destination_Info"/>
         <activity android:name=".browse_continents"/>
         <activity android:name=".http_test" />
         <activity android:name=".afterselection" />
