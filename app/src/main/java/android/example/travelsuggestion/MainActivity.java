@@ -2,12 +2,8 @@ package android.example.travelsuggestion;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RatingBar;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private Button browse;
     private Button Home;
     private Button http;
-   private Button RateUs;
+    private Button RateUs;
 
 
 
@@ -48,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LoginScreen.class);
         startActivity(intent);
     }
-    public void openActivityBrowseContinents(View view) {
+    public void openActivityBrowseContinents(View view){
         Intent intent = new Intent(this, browse_continents.class);
         startActivity(intent);
     }
@@ -71,5 +67,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Favourite.class);
         startActivity(intent);
     }
+
 
 }
