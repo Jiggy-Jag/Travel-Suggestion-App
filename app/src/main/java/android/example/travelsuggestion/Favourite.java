@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -25,6 +26,7 @@ public class Favourite extends AppCompatActivity {
 
     static  boolean loadFav = true;
     static int globalIndex;
+    String image;
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -35,6 +37,8 @@ public class Favourite extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favourite);
+
+        loadFav = true;
 
         final LinearLayout lm = (LinearLayout) findViewById(R.id.linear_layout);
 
@@ -65,6 +69,9 @@ public class Favourite extends AppCompatActivity {
                 // Create TextView
                 final TextView product = new TextView(this);
                 product.setText(Favorite.get(j));
+                image = Favorite.get(j).replaceAll(" ", "_").toLowerCase();
+                Context context = product.getContext();
+                int id = context.getResources().getIdentifier(image, "drawable", context.getPackageName());
                 product.setTextSize(24);
                 product.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 product.setPadding(20,10,20,0);

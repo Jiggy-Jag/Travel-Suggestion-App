@@ -1,6 +1,7 @@
 package android.example.travelsuggestion;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -10,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +47,8 @@ import static android.example.travelsuggestion.SelectionButtons.selected_Adventu
 public class afterselection extends selection {
     private TextView title,txt_summary,txt_attractions;
     static private Random rand;
+    private ImageView imageView;
+    String imageName;
     String country;
     int id;
 
@@ -61,13 +65,16 @@ public class afterselection extends selection {
         title = findViewById(R.id.name);
         txt_summary = findViewById(R.id.txt_summary);
         txt_attractions = findViewById(R.id.txt_attractions);
-
+        imageView = findViewById(R.id.imageView);
         String keyword1 = keywords.get(0);
 
 
         if (loadFav == true){
 
-            new afterselection.GetDataTask().execute("http://172.31.82.136:4000/destinations/" + idList.get(globalIndex));
+            new afterselection.GetDataTask().execute("http://172.31.82.136:4000/destinations/"+ idList.get(globalIndex));
+            loadFav = false;
+            return;
+
         }
         else{
             if (keywords.size() == 2 ){
@@ -165,36 +172,59 @@ public class afterselection extends selection {
             super.onPostExecute(result);
 
 
-            try {
-                JSONArray json = new JSONArray(result);
-                int random = RandomNumber(1,json.length());
-                JSONObject e = json.getJSONObject(random);
+            if(loadFav == true){
+                JSONArray json = null;
+                try {
+                    json = new JSONArray(result);
+                    for(int i = 0; i < result.length(); i++){
+                        JSONObject e = json.getJSONObject(i);
+                        id = e.getInt("ID");
+                        country = e.getString("Country");
+                        String attractions = e.getString("Attractions");
+                        String summary = e.getString("Summary");
+                        title.setText(country);
+                        txt_summary.setText(summary);
+                        txt_attractions.setText(attractions);
 
-                id = e.getInt("ID");
-                country = e.getString("Country");
-                String attractions = e.getString("Attractions");
-                String summary = e.getString("Summary");
-
-
-                title.setText(country);
-                txt_summary.setText(summary);
-                txt_attractions.setText(attractions);
-
-
-//                for(int i = 0; i < result.length(); i++){
-//                    JSONObject e = json.getJSONObject(i);
-//                    idList.add(e.getInt("ID"));
-//                    int id = e.getInt("ID");
-//                    String weather = e.getString("weather");
-//
-//                    mResult.append("ID: " + String.valueOf(id) + "\n Name: " + country + " \n Keywords: " + keyword1 + ", " + keyword2 + ", " + keyword3 + "\n" + "Summary: " + summary + "\n" + "Attractions: " + attractions + "\n\n\n");
-//                }
+                        imageName = country.replaceAll(" ", "_").toLowerCase();
+                        Context context = imageView.getContext();
+                        int id = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
+                        imageView.setImageResource(id);
 
 
 
-            } catch (JSONException e) {
-                e.printStackTrace();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }else{
+                try {
+                    JSONArray json = new JSONArray(result);
+                    int random = RandomNumber(1,json.length());
+                    JSONObject e = json.getJSONObject(random);
+
+                    id = e.getInt("ID");
+                    country = e.getString("Country");
+                    String attractions = e.getString("Attractions");
+                    String summary = e.getString("Summary");
+
+
+                    title.setText(country);
+                    txt_summary.setText(summary);
+                    txt_attractions.setText(attractions);
+
+                    imageName = country.replaceAll(" ", "_").toLowerCase();
+                    Context context = imageView.getContext();
+                    int id = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
+                    imageView.setImageResource(id);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
+
         }
 
 

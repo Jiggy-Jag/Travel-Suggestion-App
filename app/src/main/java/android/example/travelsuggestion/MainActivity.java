@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        helpMePick = (Button) findViewById(R.id.btnHelpMePick);
+//        helpMePick = (Button) findViewById(R.id.btnHelpMePick);
         letMeChoose = (Button) findViewById(R.id.btnLetMeChoose);
         browse = (Button) findViewById(R.id.btn_browse);
         http = (Button) findViewById(R.id.http);
