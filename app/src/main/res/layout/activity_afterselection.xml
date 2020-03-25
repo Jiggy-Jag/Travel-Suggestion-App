@@ -92,6 +92,8 @@
             android:id="@+id/back"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="30dp"
             android:background="@drawable/back"
             android:onClick="onBackPressed" />
 
@@ -99,17 +101,27 @@
             android:id="@+id/home"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="30dp"
             android:background="@drawable/home"
-            android:onClick="onClickHome"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"/>
+            android:onClick="onClickHome" />
 
         <Button
             android:id="@+id/favorite"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="30dp"
             android:background="@drawable/favorite"
             android:onClick="onClickFavorite" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="?attr/actionModeShareDrawable" />
 
     </LinearLayout>
 
