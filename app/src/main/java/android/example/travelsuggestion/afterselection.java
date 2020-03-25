@@ -51,7 +51,7 @@ public class afterselection extends selection {
     String imageName;
     String country;
     int id;
-
+    Button bt;
 
     static ArrayList<String> Favorite = new ArrayList<String>();
     static ArrayList<Integer> idList = new ArrayList<Integer>();//store all the ID's of the countries
@@ -68,6 +68,19 @@ public class afterselection extends selection {
         imageView = findViewById(R.id.imageView);
         String keyword1 = keywords.get(0);
 
+        bt =(Button)findViewById(R.id.button);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Intent.ACTION_SEND);
+                myIntent.setType("text/plain");
+                String shareBody = "your body here";
+                String shareSub = "your subject here";
+                myIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
+                myIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                startActivity(Intent.createChooser(myIntent, "share using"));
+            }
+        });
 
         if (loadFav == true){
 
