@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 //        helpMePick = (Button) findViewById(R.id.btnHelpMePick);
         letMeChoose = (Button) findViewById(R.id.btnLetMeChoose);
         browse = (Button) findViewById(R.id.btn_browse);
-        http = (Button) findViewById(R.id.http);
         RateUs = (Button) findViewById(R.id.btn_RateUs);
 
     }
@@ -45,17 +44,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openActivityBrowseContinents(View view){
-        Intent intent = new Intent(this, browse_continents.class);
+        Intent intent = new Intent(this, browse_screen.class);
         startActivity(intent);
     }
 
     public void openRatingActivity (View view){
         Intent intent = new Intent(this, Rating_bar.class);
-        startActivity(intent);
-    }
-
-    public void openHTTPActivity(View view) {
-        Intent intent = new Intent(this, http_test.class);
         startActivity(intent);
     }
 
