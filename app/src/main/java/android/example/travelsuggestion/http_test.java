@@ -32,7 +32,7 @@ public class http_test extends AppCompatActivity {
         mResult = findViewById(R.id.tv);
         dest_id = findViewById(R.id.editText);
 
-        // make POST request
+    
         new PostDataTask().execute("http://172.31.82.136:3000/users");
 
         //make PUT request
