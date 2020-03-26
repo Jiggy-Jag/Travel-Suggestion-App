@@ -14,7 +14,7 @@ public class destination_Info extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_template);
+        //setContentView(R.layout.activity_destination__info);
         bt =(Button)findViewById(R.id.button);
         bt.setOnClickListener(new View.OnClickListener() {
             @Override

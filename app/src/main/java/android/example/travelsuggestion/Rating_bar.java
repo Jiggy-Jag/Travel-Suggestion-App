@@ -33,6 +33,7 @@ import java.util.Arrays;
 
 public class Rating_bar extends AppCompatActivity implements RatingDialogListener {
 
+    // create objects
     TextView rateCount, showRating;
     EditText review;
     Button submit;
@@ -44,14 +45,17 @@ public class Rating_bar extends AppCompatActivity implements RatingDialogListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rating_bar);
 
+        // initialise the objects
         rateCount = findViewById(R.id.rateCount);
         ratingBar = findViewById(R.id.ratingBar);
         review = findViewById(R.id.review);
         submit = findViewById(R.id.submitBtn);
         showRating = findViewById(R.id.showRating);
 
+        // assign OnClickListener to submit button
         submit.setOnClickListener(new View.OnClickListener(){
             public void onClick (View view){
+                // call showRating method when submit button is clicked
                 showRatingDialog();
 
             }
