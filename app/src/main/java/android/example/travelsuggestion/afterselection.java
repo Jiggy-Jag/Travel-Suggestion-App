@@ -1,9 +1,19 @@
 package android.example.travelsuggestion;
 
+
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,11 +30,31 @@ import java.util.Random;
 
 import androidx.annotation.RequiresApi;
 
+import static android.example.travelsuggestion.Favourite.globalIndex;
+import static android.example.travelsuggestion.Favourite.loadFav;
+import static android.example.travelsuggestion.SelectionButtons.keywords;
+import static android.example.travelsuggestion.SelectionButtons.selected_shopping;
+import static android.example.travelsuggestion.SelectionButtons.selected_culture;
+import static android.example.travelsuggestion.SelectionButtons.selected_sightseeing;
+import static android.example.travelsuggestion.SelectionButtons.selected_Wildlife;
+import static android.example.travelsuggestion.SelectionButtons.selected_Beaches;
+import static android.example.travelsuggestion.SelectionButtons.selected_Scenic_views;
+import static android.example.travelsuggestion.SelectionButtons.selected_Island;
+import static android.example.travelsuggestion.SelectionButtons.selected_Romantic;
+import static android.example.travelsuggestion.SelectionButtons.selected_Adventures;
+
 
 public class afterselection extends selection {
     private TextView title,txt_summary,txt_attractions;
     static private Random rand;
+    private ImageView imageView;
+    String imageName;
+    String country;
+    int id;
+    Button bt;
 
+    static ArrayList<String> Favorite = new ArrayList<String>();
+    static ArrayList<Integer> idList = new ArrayList<Integer>();//store all the ID's of the countries
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -35,27 +65,87 @@ public class afterselection extends selection {
         title = findViewById(R.id.name);
         txt_summary = findViewById(R.id.txt_summary);
         txt_attractions = findViewById(R.id.txt_attractions);
-
+        imageView = findViewById(R.id.imageView);
         String keyword1 = keywords.get(0);
 
-        if (keywords.size() == 2 ){
-            String keyword2 = keywords.get(1);
-            new afterselection.GetDataTask().execute("http://172.31.82.136:5000/Search/" + keyword1 + "/" + keyword2);
+        bt =(Button)findViewById(R.id.button);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Intent.ACTION_SEND);
+                myIntent.setType("text/plain");
+                String shareBody = "your body here";
+                String shareSub = "your subject here";
+                myIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
+                myIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                startActivity(Intent.createChooser(myIntent, "share using"));
+            }
+        });
+
+        if (loadFav == true){
+
+            new afterselection.GetDataTask().execute("http://172.31.82.136:4000/destinations/"+ idList.get(globalIndex));
+            loadFav = false;
+            return;
+
         }
-else {
-            new afterselection.GetDataTask().execute("http://172.31.82.136:5000/Search/" + keyword1 + "/" );
+        else{
+            if (keywords.size() == 2 ){
+                String keyword2 = keywords.get(1);
+                new afterselection.GetDataTask().execute("http://172.31.82.136:4000/Search/" + keyword1 + "/" + keyword2);
+            }
+            else {
+                new afterselection.GetDataTask().execute("http://172.31.82.136:4000/Search/" + keyword1 + "/" );
+            }
         }
 
 
     }
 
+    public void onClickFavorite(View view){
+        if(Favorite.contains(country) ){
+            Favorite.remove(country);
+            idList.remove(id);
+            Toast.makeText(getApplicationContext(),country + " removed from favorites",Toast.LENGTH_SHORT).show();
+            view.setBackgroundResource(R.drawable.favorite);
+        }
+        else{
+            Favorite.add(country);
+            idList.add(id);
+            Toast.makeText(getApplicationContext(),country + " added to favorites",Toast.LENGTH_SHORT).show();
+            view.setBackgroundResource(R.drawable.favorite_pressed);
+        }
+    }
 
+    public void onClickHome(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+    public void onBackPressed(View view) {
 
+        //Reset values of previous
+        super.onBackPressed();
+        keywords.clear();
+        selected_shopping.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_culture.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_sightseeing.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_Wildlife.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_Beaches.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_Scenic_views.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_Island.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_Romantic.setBackgroundColor(Color.parseColor("#CACFD2"));
+        selected_Adventures.setBackgroundColor(Color.parseColor("#CACFD2"));
+
+    }
 
     @Override
     public void onBackPressed() {
+
+        //Reset values of previous
         super.onBackPressed();
         keywords.clear();
+
+
     }
 
     public int RandomNumber(int aa, int bb)
@@ -93,35 +183,61 @@ else {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            ArrayList<Integer> idList = new ArrayList<Integer>();//store all the ID's of the countries
-            try {
-                JSONArray json = new JSONArray(result);
-                int random = RandomNumber(1,json.length());
-                JSONObject e = json.getJSONObject(random);
-                int id = e.getInt("ID");
-                String country = e.getString("Country");
-                String attractions = e.getString("Attractions");
-                String summary = e.getString("Summary");
-
-                title.setText(country);
-                txt_summary.setText(summary);
-                txt_attractions.setText(attractions);
 
 
-//                for(int i = 0; i < result.length(); i++){
-//                    JSONObject e = json.getJSONObject(i);
-//                    idList.add(e.getInt("ID"));
-//                    int id = e.getInt("ID");
-//                    String weather = e.getString("weather");
-//
-//                    mResult.append("ID: " + String.valueOf(id) + "\n Name: " + country + " \n Keywords: " + keyword1 + ", " + keyword2 + ", " + keyword3 + "\n" + "Summary: " + summary + "\n" + "Attractions: " + attractions + "\n\n\n");
-//                }
+            if(loadFav == true){
+                JSONArray json = null;
+                try {
+                    json = new JSONArray(result);
+                    for(int i = 0; i < result.length(); i++){
+                        JSONObject e = json.getJSONObject(i);
+                        id = e.getInt("ID");
+                        country = e.getString("Country");
+                        String attractions = e.getString("Attractions");
+                        String summary = e.getString("Summary");
+                        title.setText(country);
+                        txt_summary.setText(summary);
+                        txt_attractions.setText(attractions);
+
+                        imageName = country.replaceAll(" ", "_").toLowerCase();
+                        Context context = imageView.getContext();
+                        int id = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
+                        imageView.setImageResource(id);
 
 
 
-            } catch (JSONException e) {
-                e.printStackTrace();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }else{
+                try {
+                    JSONArray json = new JSONArray(result);
+                    int random = RandomNumber(1,json.length());
+                    JSONObject e = json.getJSONObject(random);
+
+                    id = e.getInt("ID");
+                    country = e.getString("Country");
+                    String attractions = e.getString("Attractions");
+                    String summary = e.getString("Summary");
+
+
+                    title.setText(country);
+                    txt_summary.setText(summary);
+                    txt_attractions.setText(attractions);
+
+                    imageName = country.replaceAll(" ", "_").toLowerCase();
+                    Context context = imageView.getContext();
+                    int id = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
+                    imageView.setImageResource(id);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
+
         }
 
 
@@ -157,4 +273,7 @@ else {
         }
 
     }
+
+
+
 }

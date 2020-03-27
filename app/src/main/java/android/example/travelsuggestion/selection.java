@@ -19,12 +19,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 public class selection extends AppCompatActivity {
-String test = "1";
-    static ArrayList<String> keywords =new ArrayList<String>();
+
+ // static ArrayList<String> keywords =new ArrayList<String>();
     BubblePicker bubblePicker;
     static String[] name={
             "Shopping", "Culture", "Sightseeing", "Wildlife", "Beaches",
-            "Scenic Views", "Island","Romantic","Adventurous"
+            "Scenic Views", "Island","romantic","Adventurous"
     };
 
     int[] images={
@@ -37,7 +37,6 @@ String test = "1";
             R.drawable.maldives,
             R.drawable.neworleans,
             R.drawable.sydney,
-            R.drawable.newyork,
     };
 
     int[] colors={
@@ -50,7 +49,7 @@ String test = "1";
             Color.parseColor("#C04D40"),
             Color.parseColor("#880E4F"),
             Color.parseColor("#1A237E"),
-            Color.parseColor("#C04D40"),
+
 
     };
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -66,38 +65,38 @@ String test = "1";
             PickerItem item=new PickerItem(name[i],colors[i], Color.WHITE, getDrawable(images[i]));
             listItems.add(item);
         }
+//
+//        bubblePicker.setItems(listItems);
+//        bubblePicker.setListener(new BubblePickerListener() {
+//            @Override
+//            public void onBubbleDeselected(@NotNull PickerItem pickerItem) {
+//
+//                keywords.remove(pickerItem.getTitle());
+//
+//            }
+//
+//            @Override
+//            public void onBubbleSelected(@NotNull PickerItem pickerItem) {
+//                String x = pickerItem.getTitle();
+//                keywords.add(pickerItem.getTitle());
+//                Toast.makeText(getApplicationContext(),x,Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//    }
 
-        bubblePicker.setItems(listItems);
-        bubblePicker.setListener(new BubblePickerListener() {
-            @Override
-            public void onBubbleDeselected(@NotNull PickerItem pickerItem) {
-
-                keywords.remove(pickerItem.getTitle());
-
-            }
-
-            @Override
-            public void onBubbleSelected(@NotNull PickerItem pickerItem) {
-                String x = pickerItem.getTitle();
-                keywords.add(pickerItem.getTitle());
-                Toast.makeText(getApplicationContext(),x,Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
-
-    public void onClick( View view){
-
-        if(keywords.size() > 2){
-            Toast.makeText(getApplicationContext(),"Select only 2",Toast.LENGTH_SHORT).show();
-
-        }
-        else if (keywords.size() == 0){
-            Toast.makeText(getApplicationContext(),"Select at least 1",Toast.LENGTH_SHORT).show();
-        }
-        else{
-            Intent intent = new Intent(getApplicationContext(), afterselection.class);
-            startActivity(intent);
-        }
+//    public void onClick( View view){
+//
+//        if(keywords.size() > 2){
+//            Toast.makeText(getApplicationContext(),"Select only 2",Toast.LENGTH_SHORT).show();
+//
+//        }
+//        else if (keywords.size() == 0){
+//            Toast.makeText(getApplicationContext(),"Select at least 1",Toast.LENGTH_SHORT).show();
+//        }
+//        else{
+//            Intent intent = new Intent(getApplicationContext(), afterselection.class);
+//            startActivity(intent);
+//        }
     }
 }

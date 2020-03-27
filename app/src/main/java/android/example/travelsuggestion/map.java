@@ -15,24 +15,23 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class map extends FragmentActivity implements OnMapReadyCallback {
 
-
-    public void LosAngelesInfo(View view){
-        Intent intent = new Intent(this,los_angeles_info.class);
+/*
+    public void LosAngelesInfo(View view) {
+        Intent intent = new Intent(this, los_angeles_info.class);
         startActivity(intent);
     }
-
+    */
 
     GoogleMap map;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // initialise map
         setContentView(R.layout.activit_map);
-        SupportMapFragment mapFragment = (SupportMapFragment)getSupportFragmentManager()
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-
-
 
 
     }
@@ -42,6 +41,7 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
 
         map = googleMap;
         // Add a marker in LA and move the camera
+        // use the longitude and latitude to position the marker
         LatLng LosAngeles = new LatLng(34.053164, -118.252480);
         map.addMarker(new MarkerOptions().position(LosAngeles).title("Marker in Los Angeles"));
         map.moveCamera(CameraUpdateFactory.newLatLng(LosAngeles));
@@ -50,7 +50,7 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
         map.addMarker(new MarkerOptions().position(London).title("Marker in London"));
         map.moveCamera(CameraUpdateFactory.newLatLng(London));
 
-        LatLng Singapore = new LatLng(1.354039, 103.867289 );
+        LatLng Singapore = new LatLng(1.354039, 103.867289);
         map.addMarker(new MarkerOptions().position(Singapore).title("Marker in Singapore"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Singapore));
 
@@ -86,15 +86,15 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
         map.addMarker(new MarkerOptions().position(Dubrovnik).title("Marker in Dubrovnik"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Dubrovnik));
 
-        LatLng Santorini = new LatLng(36.392945,  25.463200);
+        LatLng Santorini = new LatLng(36.392945, 25.463200);
         map.addMarker(new MarkerOptions().position(Santorini).title("Marker in Santorini"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Santorini));
 
-        LatLng Santiago = new LatLng( -33.503397,  -70.660091);
+        LatLng Santiago = new LatLng(-33.503397, -70.660091);
         map.addMarker(new MarkerOptions().position(Santiago).title("Marker in Santiago"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Santiago));
 
-        LatLng Bora = new LatLng(-16.500307, -151.741644 );
+        LatLng Bora = new LatLng(-16.500307, -151.741644);
         map.addMarker(new MarkerOptions().position(Bora).title("Marker in Bora"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Bora));
 
@@ -118,51 +118,51 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
         map.addMarker(new MarkerOptions().position(Cape_Town).title("Marker in Cape Town"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Cape_Town));
 
-        LatLng Waikato  = new LatLng(37.396973,  174.899034);
+        LatLng Waikato = new LatLng(37.396973, 174.899034);
         map.addMarker(new MarkerOptions().position(Waikato).title("Marker in Waikato"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Waikato));
 
-        LatLng  Amsterdam  = new LatLng(52.342881, 4.910559 );
-        map.addMarker(new MarkerOptions().position(Amsterdam ).title("Marker in Amsterdam "));
-        map.moveCamera(CameraUpdateFactory.newLatLng(Amsterdam ));
+        LatLng Amsterdam = new LatLng(52.342881, 4.910559);
+        map.addMarker(new MarkerOptions().position(Amsterdam).title("Marker in Amsterdam "));
+        map.moveCamera(CameraUpdateFactory.newLatLng(Amsterdam));
 
-        LatLng Antarctica   = new LatLng(-75.569419,19.955791);
-        map.addMarker(new MarkerOptions().position(Antarctica ).title("Marker in Antarctica"));
+        LatLng Antarctica = new LatLng(-75.569419, 19.955791);
+        map.addMarker(new MarkerOptions().position(Antarctica).title("Marker in Antarctica"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Antarctica));
 
-        LatLng Bali  = new LatLng(-8.331840,   115.100358);
+        LatLng Bali = new LatLng(-8.331840, 115.100358);
         map.addMarker(new MarkerOptions().position(Bali).title("Marker in Bali"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Bali));
 
-        LatLng  Barbados  = new LatLng(13.173058, -59.544987 );
+        LatLng Barbados = new LatLng(13.173058, -59.544987);
         map.addMarker(new MarkerOptions().position(Barbados).title("Marker in Barbados"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Barbados));
 
-        LatLng Cairo = new LatLng(30.038367,   31.239788);
+        LatLng Cairo = new LatLng(30.038367, 31.239788);
         map.addMarker(new MarkerOptions().position(Cairo).title("Marker in Cairo"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Cairo));
 
-        LatLng  Copenhagen  = new LatLng(55.679319,  12.567724);
-        map.addMarker(new MarkerOptions().position(Copenhagen ).title("Marker in Copenhagen "));
-        map.moveCamera(CameraUpdateFactory.newLatLng(Copenhagen ));
+        LatLng Copenhagen = new LatLng(55.679319, 12.567724);
+        map.addMarker(new MarkerOptions().position(Copenhagen).title("Marker in Copenhagen "));
+        map.moveCamera(CameraUpdateFactory.newLatLng(Copenhagen));
 
-        LatLng  maldives  = new LatLng(-0.287464, 73.418966);
+        LatLng maldives = new LatLng(-0.287464, 73.418966);
         map.addMarker(new MarkerOptions().position(maldives).title("Marker in Maldives "));
-        map.moveCamera(CameraUpdateFactory.newLatLng(maldives ));
+        map.moveCamera(CameraUpdateFactory.newLatLng(maldives));
 
-        LatLng  Marrakech  = new LatLng(31.648813, -7.986771);
+        LatLng Marrakech = new LatLng(31.648813, -7.986771);
         map.addMarker(new MarkerOptions().position(Marrakech).title("Marker in Marrakech "));
         map.moveCamera(CameraUpdateFactory.newLatLng(Marrakech));
 
-        LatLng  NYC  = new LatLng(40.705478, -73.982470);
+        LatLng NYC = new LatLng(40.705478, -73.982470);
         map.addMarker(new MarkerOptions().position(NYC).title("Marker in New York City"));
         map.moveCamera(CameraUpdateFactory.newLatLng(NYC));
 
-        LatLng  Paris  = new LatLng(48.855901,2.356671  );
+        LatLng Paris = new LatLng(48.855901, 2.356671);
         map.addMarker(new MarkerOptions().position(Paris).title("Marker in Paris"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Paris));
 
-        LatLng  Tokyo = new LatLng(35.705033, 139.230749);
+        LatLng Tokyo = new LatLng(35.705033, 139.230749);
         map.addMarker(new MarkerOptions().position(Tokyo).title("Marker in Tokyo"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Tokyo));
 
@@ -170,35 +170,101 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
         map.addMarker(new MarkerOptions().position(Sydney).title("Marker in Sydney"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Sydney));
 
-        LatLng NewOrleans  = new LatLng(30.011340,  -90.006357);
+        LatLng NewOrleans = new LatLng(30.011340, -90.006357);
         map.addMarker(new MarkerOptions().position(NewOrleans).title("Marker in New Orleans"));
         map.moveCamera(CameraUpdateFactory.newLatLng(NewOrleans));
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
+
+    /*
+    // used the code from http_test
+    //make GET request when button is pressed
+        new GetDataTask().execute("http://172.31.82.136:3000/map/" + dest_id.getText());
+
+
+    class GetDataTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            try {
+                return getData(params[0]);
+            } catch (IOException | JSONException ex) {
+                return "Network error !";
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            try {
+                JSONArray json = new JSONArray(result);
+
+                for (int i = 0; i < result.length(); i++) {
+                    JSONObject e = json.getJSONObject(i);
+
+                    int id = e.getInt("dest_id");
+                    // assign country string to column in table called "dest_name"
+                    String country = e.getString("dest_name");
+                    // assign latitude string to column in table called "latitude"
+                    String latitude = e.getString("latitude");
+                    // assign longitude string to column in table called "longitude"
+                    String longitude = e.getString("longitude");
+
+
+                    txtResult.setText("ID: " + String.valueOf(id) + "\n Name: " + country + " \n Keywords: " + latitude + ", " + longitude);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+        }
+
+        private String getData(String urlPath) throws IOException, JSONException {
+            StringBuilder result = new StringBuilder();
+            BufferedReader bufferedReader = null;
+
+
+            try {
+                //Initialize and config request
+                // then connect to server
+                URL url = new URL(urlPath);
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                urlConnection.setReadTimeout(10000);
+                urlConnection.setConnectTimeout(10000);
+                urlConnection.setRequestMethod("GET");
+                urlConnection.setRequestProperty("Content-Type", "application/json");
+                urlConnection.connect();
+
+                InputStream inputStream = urlConnection.getInputStream();
+                bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    result.append(line).append("\n");
+                }
+
+            } finally {
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
+            }
+
+
+            return result.toString();
+
+
+        }
+
+
+            */
+
+
 }

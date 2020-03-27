@@ -2,12 +2,8 @@ package android.example.travelsuggestion;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RatingBar;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private Button browse;
     private Button Home;
     private Button http;
-   private Button RateUs;
+    private Button RateUs;
 
 
 
@@ -26,10 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        helpMePick = (Button) findViewById(R.id.btnHelpMePick);
+//        helpMePick = (Button) findViewById(R.id.btnHelpMePick);
         letMeChoose = (Button) findViewById(R.id.btnLetMeChoose);
         browse = (Button) findViewById(R.id.btn_browse);
-        http = (Button) findViewById(R.id.http);
         RateUs = (Button) findViewById(R.id.btn_RateUs);
 
     }
@@ -48,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LoginScreen.class);
         startActivity(intent);
     }
-    public void openActivityBrowseContinents(View view) {
-        Intent intent = new Intent(this, browse_continents.class);
+    public void openActivityBrowseContinents(View view){
+        Intent intent = new Intent(this, browse_screen.class);
         startActivity(intent);
     }
 
@@ -58,9 +53,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openHTTPActivity(View view) {
-        Intent intent = new Intent(this, http_test.class);
+    public void openActivitySelectedButton(View view) {
+        Intent intent = new Intent(this, SelectionButtons.class);
         startActivity(intent);
     }
+    public void openActivityFavourite(View view) {
+        Intent intent = new Intent(this, Favourite.class);
+        startActivity(intent);
+    }
+
 
 }

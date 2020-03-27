@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectionButtons"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="50dp"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Shopping button-->
+            <Button
+                android:id="@+id/Shopping"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/shopping"
+                android:onClick="onClickShopping"
+                android:text="Shopping"
+                android:textColor="@drawable/selection"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/selected_shopping"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="#D5D8DC" />
+
+
+            <!-- Culture button-->
+            <Button
+                android:id="@+id/Culture"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/culture"
+                android:onClick="onClickCulture"
+                android:text="Culture"
+                android:textColor="@drawable/selection"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/selected_culture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="#D5D8DC" />
+
+            <!-- Sightseeing button-->
+            <Button
+                android:id="@+id/Sightseeing"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/sightseeing"
+                android:onClick="onClickSightseeing"
+                android:text="Sightseeing"
+                android:textColor="@drawable/selection"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/selected_sightseeing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="#D5D8DC" />
+
+
+            <!-- Wildlife button-->
+            <Button
+                android:id="@+id/Wildlife"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/wildlife"
+                android:onClick="onClickWildlife"
+                android:text="Wildlife"
+                android:textColor="@drawable/selection"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/selected_Wildlife"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="#D5D8DC" />
+
+            <!-- Beaches  button-->
+            <Button
+                android:id="@+id/Beaches"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/beaches"
+                android:onClick="onClickBeaches"
+                android:text="Beaches"
+                android:textColor="@drawable/selection"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/selected_Beaches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="#D5D8DC" />
+
+            <!-- Scenic Views button-->
+            <Button
+                android:id="@+id/Scenic_Views"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/scenic_views"
+                android:onClick="onClickScenic_Views"
+                android:text="Scenic Views"
+                android:textColor="@drawable/selection"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/selected_Scenic_Views"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="#D5D8DC" />
+
+            <!-- Island button-->
+            <Button
+                android:id="@+id/Island"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/islands"
+                android:onClick="onClickIsland"
+                android:text="Island"
+                android:textColor="@drawable/selection"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/selected_Island"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="#D5D8DC" />
+
+            <!-- Romantic button-->
+            <Button
+                android:id="@+id/Romantic"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/romantic"
+                android:onClick="onClickRomantic"
+                android:text="Romantic"
+                android:textColor="@drawable/selection"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/selected_Romantic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="#D5D8DC" />
+
+            <!-- Adventurous button-->
+            <Button
+                android:id="@+id/Adventurous"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/adventurous"
+                android:onClick="onClickAdventurous"
+                android:text="Adventurous"
+                android:textColor="@drawable/selection"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/selected_Adventurous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="#D5D8DC" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/back"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="onBackPressed"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"
+            android:background="@drawable/back"
+            android:gravity="center"
+            android:layout_marginRight="70dp"/>
+
+        <Button
+            android:id="@+id/Next"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="onClickNext"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"
+            android:background="@drawable/forward"
+            android:gravity="center"
+            android:layout_marginLeft="70dp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
