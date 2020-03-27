@@ -1,108 +1,13 @@
-var crypto = require('crypto');
-var uuid = require('uuid');
 const express = require('express');
+const mysql1 = require('../mongodbtest/database');
 const mysql = require('mysql');
-var bodyParser = require('body-parser');
-const mysql1 = require('../mongodbtest/dbconnect');
+
 
 // Create connection
 var db = mysql1.con;
 
 
-
-
-
-//PASSWORD ULTIL
-var genRandomString = function(length){
-    return crypto.randomBytes(Math.ceil(length/2))
-    .toString('hex')/* CONVERT TO HEX */
-    .slice(0, length);
-};
-var sha512 = function (password,salt){
-    var hash = crypto.createHmac('sha512',salt);
-    hash.update(password);
-    var value = hash.digest('hex');
-    return {
-        salt:salt,
-        passwordHash:value
-    };
-};
-function saltHashPassword(userPassword){
-    var salt = genRandomString(16);
-    var passwordData = sha512(userPassword,salt);
-    return passwordData;
-}
-
-function checkHashPassword(userPassword,salt){
-    var passwordData = sha512(userPassword,salt);
-    return passwordData;
-}
-
 const app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-
-app.post('/register/', (req,res, next)=>{
-
-    var post_data = req.body; //GET POST PARAMS
-
-    var uid = uuid.v4(); //Get UUID
-    var plaint_password = post_data.password;
-    var hash_data = saltHashPassword(plaint_password);
-    var password = hash_data.passwordHash; //Get HASH VALUE
-    var salt = hash_data.salt; //Get SALT
-
-    var name = post_data.name;
-    var email = post_data.email;
-
-    db.query('SELECT * FROM users where email=?', [email],function(err,result,fields){
-        db.on('error', function(err){
-            console.log('[MySQL ERROR]',err);
-        });
-
-                if(result && result.length)
-            res.json('User already exists!!!');
-        else
-        {
-            db.query('INSERT INTO users (unique_id, name, email, encrypted_password, salt, created_at, updated_at) VALUES (?, ?, ?, ?, ?, NOW(),NOW())',[uid,name,email,password,salt],function(err,result,fields){
-                db.on('error', function(err){
-            console.log('[MySQL ERROR]',err);
-                    res.json('Register error: ',err);
-        });
-                res.json('Register successful');
-            })
-        }
-    });
-});
-
-app.post('/login/', (req,res,next)=>{
-    var post_data = req.body;
-
-    var user_password = post_data.password;
-    var email = post_data.email;
-
-        db.query('SELECT * FROM users where email=?', [email],function(err,result,fields){
-        db.on('error', function(err){
-            console.log('[MySQL ERROR]',err);
-        });
-
-                if(result && result.length)
-        {
-            var salt = result[0].salt;
-            var encrypted_password = result[0].encrypted_password;
-            var hashed_password = checkHashPassword(user_password,salt).passwordHash;
-            if(encrypted_password == hashed_password)
-                res.end(JSON.stringify(result[0]))
-            else
-                res.end(JSON.stringify('Wrong Password, Try again'));
-        }
-        else
-        {
-       res.json('User does NOT exist!!!');
-        }
-    });
-
-});
 
 
 app.get('/destinations', (req, res) => {
@@ -112,17 +17,18 @@ app.get('/destinations', (req, res) => {
         if (err) throw err;
         res.send(result);
 
+
     });
 
 });
 
 app.get('/destinations/:id', (req, res) => {
 // Get specific dest_ID from the database
-    let sql = `SELECT * FROM Countries WHERE id = ${req.params.id}`;
+    let sql = `SELECT * FROM destinations WHERE dest_id = ${req.params.id}`;
     db.query(sql, (err, result) => {
         if (err) console.log('Please enter the correct id');
         res.send(result);
-        console.log("User searched" + req);
+        console.log("User searched" + " " + req.params.id);
 
     });
 
@@ -133,7 +39,7 @@ app.get('/Search/:keyword1/:keyword2/:keyword3', (req, res) => {
     db.query(sql, (err, result) => {
         if (err) throw err;
         res.send(result);
-        console.log("User searched" + req);
+        console.log("User searched" + " " + req.params.keyword1 + " " + req.params.keyword2 + " " + req.params.keyword3);
 
     });
 
@@ -145,7 +51,7 @@ app.get('/Search/:keyword1/:keyword2', (req, res) => {
     db.query(sql, (err, result) => {
         if (err) throw err;
         res.send(result);
-        console.log("User searched" + req);
+        console.log("User searched" + " " + req.params.keyword1 + " " + req.params.keyword2 );
 
     });
 
@@ -156,7 +62,7 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
-         console.log("User searched" + req);
+         console.log("User searched" + " " + req.params.keyword1);
 
      });
 
@@ -167,7 +73,7 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
-         console.log("User searched" + req);
+         console.log("User searched" + " " + req.params.country);
      });
 
  });
@@ -178,7 +84,7 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
-         console.log("User searched" + req);
+         console.log("User searched" + " " + req.params.country1);
 
      });
 
@@ -189,7 +95,7 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
-         console.log("User searched" + req);
+         console.log("User searched" + " " + req.params.country1);
 
      });
 
@@ -201,7 +107,7 @@ app.get('/Search/:keyword1', (req, res) => {
      db.query(sql, (err, result) => {
          if (err) throw err;
          res.send(result);
-         console.log("User rated" + req);
+         console.log("User rated" + " " + req.params.rating + " " + req.params.comment);
 
      });
 
