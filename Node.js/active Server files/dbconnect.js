@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-const dbcconfig = require("../mongodbtest/database - config");
+const dbcconfig = require("../mongodbtest/dbconfig");
 const express = require("express");
 
 const con = mysql.createConnection({
