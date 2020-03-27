@@ -4,36 +4,36 @@
 
 - API Documentation:
 
-GET /destinations:
+<b> GET /destinations:</b>
 
 Displays all destinations
 
 optional /id for specific country search
 
-GET /Search/keywords:
+<b>GET /Search/keywords:</b>
 
 Displays search results for keywords searched,
 
 optional /keyword1/keyword2/keyword3 ; the user can search between 1 and 3 keywords
 
-GET /Weather: 
+<b>GET /Weather:</b> 
 
 search countries weather 
 
 add /country1 for optional specific country weather search
 
-GET /Summary:
+<b> GET /Summary:</b>
 
 search countries summary
 
 add /country1 for optional specific country summary search
 
-GET /Attractions: 
+<b>GET /Attractions: </b>
 search countries attractions
 
 add /country1 for optional specific country summary search
 
-POST /rating:
+<b> POST /rating: </b>
 
 add user reviews to the database.
 
@@ -53,17 +53,19 @@ comments: user feedback
 
 2.Make sure const dbcconfig in dbconnect.js is on the right path.
 
-3.Make sure Mysql1 in app.js is on the right path.
+3.Make sure <b>Mysql1</b> in app.js is on the right path.
 
 4.Make sure Nodejs is installed alongside Mysql and express 
 
 --to install mysql and express run the following commands in the cmd (console commandline)
 
-npm install Mysql
-npm install express
+<b>npm install Mysql</b>
+
+<b> npm install express</b>
 
 5. Finally, run the following in the cmd
-node app.js
+
+<b>node app.js</b>
 
 group-project-2019-20-group-13-1 created by GitHub Classroom
 
