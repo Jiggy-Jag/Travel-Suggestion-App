@@ -5,29 +5,42 @@
 - API Documentation:
 
 GET /destinations:
+
 Displays all destinations
+
 optional /id for specific country search
 
 GET /Search/keywords:
+
 Displays search results for keywords searched,
+
 optional /keyword1/keyword2/keyword3 ; the user can search between 1 and 3 keywords
 
 GET /Weather: 
+
 search countries weather 
+
 add /country1 for optional specific country weather search
 
 GET /Summary:
+
 search countries summary
+
 add /country1 for optional specific country summary search
 
 GET /Attractions: 
 search countries attractions
+
 add /country1 for optional specific country summary search
 
 POST /rating:
+
 add user reviews to the database.
+
 add /rating/comments 
+
 rating : number of stars
+
 comments: user feedback
 
 - System Architecture:
