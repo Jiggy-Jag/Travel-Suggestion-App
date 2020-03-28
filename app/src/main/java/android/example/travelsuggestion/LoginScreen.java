@@ -82,9 +82,8 @@ public class LoginScreen<LoginDialogFragment> extends AppCompatActivity {
         View register_user_view = LayoutInflater.from(this).inflate(R.layout.register_user, null);
 
         new AlertDialog.Builder(this)
-                .setTitle("Register")
-                .setMessage("Please enter your details below to register")
-                .setMessage("Your E-Mail address will be your username")
+                .setTitle("Register for Travel Inspire"+"\n")
+                .setMessage("Please enter your details below to register" +"\n"+"\n"+"Your e-mail address will be your username")
                 .setView(register_user_view)
                 .setIcon(R.drawable.icon_padlock)
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
