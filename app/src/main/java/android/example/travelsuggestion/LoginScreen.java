@@ -119,13 +119,17 @@ public class LoginScreen<LoginDialogFragment> extends AppCompatActivity {
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
-                    if(s.contains("encrypted_password"))
+                    if(s.contains("encrypted_password")){
                         Toast.makeText(LoginScreen.this, "Login Success", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginScreen.this, MainActivity.class);
+                        startActivity(intent);
+                    }
                     else
                         Toast.makeText(LoginScreen.this, ""+s, Toast.LENGTH_SHORT).show();
                     }
                 })
         );
+        }
         }
 
 
@@ -133,4 +137,4 @@ public class LoginScreen<LoginDialogFragment> extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }*/
-}
+

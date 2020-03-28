@@ -26,19 +26,17 @@
 
         <activity android:name=".los_angeles_info" />
         <activity android:name=".browse_screen" />
-        <activity android:name=".LoginScreen" />
+        <activity android:name=".LoginScreen"> <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
         <activity android:name=".map" />
         <activity android:name=".selection" />
         <activity android:name=".browse_continents"/>
         <activity android:name=".afterselection" />
         <activity android:name=".Rating_bar" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>
