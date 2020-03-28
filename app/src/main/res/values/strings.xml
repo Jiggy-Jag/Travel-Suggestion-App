@@ -31,4 +31,10 @@
     <string name="hong_kong">HONG KONG</string>
     <string name="climate_mild_17_c_to_hot_30_c">Climate: Mild (17°C +) to Hot (30°C +)</string>
     <string name="register">register</string>
+    <string name="cancel">cancel</string>
+    <string name="name">name</string>
+    <string name="email">email</string>
+    <string name="EnterEmail">Enter Email</string>
+    <string name="EnterPassword">Enter Password</string>
+    <string name="EnterName">Enter Name</string>
 </resources>
