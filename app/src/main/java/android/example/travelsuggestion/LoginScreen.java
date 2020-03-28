@@ -84,6 +84,7 @@ public class LoginScreen<LoginDialogFragment> extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle("Register")
                 .setMessage("Please enter your details below to register")
+                .setMessage("Your E-Mail address will be your username")
                 .setView(register_user_view)
                 .setIcon(R.drawable.icon_padlock)
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
