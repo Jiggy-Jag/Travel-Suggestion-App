@@ -121,13 +121,12 @@
                 android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="7dp"
+                android:alpha="0.5"
                 android:background="@drawable/custom_round_button"
-                android:onClick="openRatingActivity"
                 android:text="@string/rate_us"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
-                android:alpha="0.5"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 

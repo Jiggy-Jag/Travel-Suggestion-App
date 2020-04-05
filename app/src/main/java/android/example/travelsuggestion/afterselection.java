@@ -84,7 +84,7 @@ public class afterselection extends selection {
 
         if (loadFav == true){
 
-            new afterselection.GetDataTask().execute("http://172.31.82.136:4000/destinations/"+ idList.get(globalIndex));
+            new afterselection.GetDataTask().execute("http://172.31.82.136:3000/destinations/"+ idList.get(globalIndex));
             loadFav = false;
             return;
 
@@ -92,10 +92,10 @@ public class afterselection extends selection {
         else{
             if (keywords.size() == 2 ){
                 String keyword2 = keywords.get(1);
-                new afterselection.GetDataTask().execute("http://172.31.82.136:4000/Search/" + keyword1 + "/" + keyword2);
+                new afterselection.GetDataTask().execute("http://172.31.82.136:3000/Search/" + keyword1 + "/" + keyword2);
             }
             else {
-                new afterselection.GetDataTask().execute("http://172.31.82.136:4000/Search/" + keyword1 + "/" );
+                new afterselection.GetDataTask().execute("http://172.31.82.136:3000/Search/" + keyword1 + "/" );
             }
         }
 

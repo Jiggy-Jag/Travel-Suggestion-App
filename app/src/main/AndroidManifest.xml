@@ -35,7 +35,6 @@
         <activity android:name=".selection" />
         <activity android:name=".browse_continents"/>
         <activity android:name=".afterselection" />
-        <activity android:name=".Rating_bar" />
         <activity android:name=".MainActivity"/>
     </application>
 
