@@ -4,6 +4,20 @@
 
 - API Documentation:
 
+<b> POST /register:</b>
+
+Takes user input for name, email and password
+
+Encrypts password
+
+Posts data to database
+
+<b> POST /login:</b>
+
+Takes user input for email and password
+
+Logs user in
+
 <b> GET /destinations:</b>
 
 Displays all destinations
