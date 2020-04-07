@@ -69,13 +69,19 @@ comments: user feedback
 
 3.Make sure <b>Mysql1</b> in app.js is on the right path.
 
-4.Make sure Nodejs is installed alongside Mysql and express 
+4.Make sure Nodejs is installed alongside Mysql, express, bodyParser, crypto and uuid 
 
 --to install mysql and express run the following commands in the cmd (console commandline)
 
 <b>npm install Mysql</b>
 
 <b> npm install express</b>
+
+<b>npm install bodyParser</b>
+
+<b>npm install crypto</b>
+
+<b>npm install uuid</b>
 
 5. Finally, run the following in the cmd
 
